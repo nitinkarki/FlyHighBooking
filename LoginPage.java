@@ -1,6 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.PreparedStatement;
 
 import javax.swing.text.*;
 
@@ -86,7 +92,7 @@ public class LoginPage extends JFrame
 		PFlightDetails.setBounds(0,340,790,200);
 
 
-		LUserName = new JLabel("         User Name ");
+		LUserName = new JLabel("         Luser Name ");
 		LPassword = new JLabel("         Password ");
 		TFUserName = new JTextField(10);
 		TPPassword = new JPasswordField(10);
@@ -136,6 +142,53 @@ public class LoginPage extends JFrame
 		LDomesticFlight.setBounds(60, 60, 100, 25);
 		LInternationalFlight.setBounds(60, 100, 120, 25);
 
+
+		String errormsg = "msg3";
+		final String dbClassName = "com.mysql.jdbc.Driver";
+		final String CONNECTION = "jdbc:mysql://ec2-54-201-6-28.us-west-2.compute.amazonaws.com:3306/db";
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+
+		try
+		{
+			Class.forName(dbClassName);
+		}
+		catch(Exception e)
+		{
+			errormsg = e.toString();
+		}
+
+		try
+		{
+			connection = DriverManager.getConnection(CONNECTION,"fhbb","drvtry");
+		}
+		catch(Exception e)
+		{
+			errormsg = e.toString();
+			System.out.println(e.toString());
+		}
+
+		try
+		{
+			preparedStatement = connection.prepareStatement("SELECT id from db.FLIGHTS");
+			resultSet = preparedStatement.executeQuery();
+	
+			resultSet.next();
+			int id = resultSet.getInt("id");
+			System.out.println("id:  " + id);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.toString());
+		}
+
+		JLabel otro = new JLabel(errormsg);
+		otro.setBounds(0,0,5000,50);
+		PLogin.add(otro);
+		otro.setVisible(true);
+
 		c.add(PFlightTypes);
 		c.add(PLogin);
 		c.add(PFlightDetails);
@@ -158,6 +211,8 @@ public class LoginPage extends JFrame
 		LEconomic1.addMouseListener(new mouse2(this, false));
 
 		BLogin.addActionListener(new button1(this));
+
+		
 	}
 
 	public static void main(String args[])
