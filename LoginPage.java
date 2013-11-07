@@ -143,51 +143,51 @@ public class LoginPage extends JFrame
 		LInternationalFlight.setBounds(60, 100, 120, 25);
 
 
-		String errormsg = "msg3";
-		final String dbClassName = "com.mysql.jdbc.Driver";
-		final String CONNECTION = "jdbc:mysql://ec2-54-201-6-28.us-west-2.compute.amazonaws.com:3306/db";
-
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		ResultSet resultSet = null;
-
-		try
-		{
-			Class.forName(dbClassName);
-		}
-		catch(Exception e)
-		{
-			errormsg = e.toString();
-		}
-
-		try
-		{
-			connection = DriverManager.getConnection(CONNECTION,"fhbb","drvtry");
-		}
-		catch(Exception e)
-		{
-			errormsg = e.toString();
-			System.out.println(e.toString());
-		}
-
-		try
-		{
-			preparedStatement = connection.prepareStatement("SELECT id from db.FLIGHTS");
-			resultSet = preparedStatement.executeQuery();
-	
-			resultSet.next();
-			int id = resultSet.getInt("id");
-			System.out.println("id:  " + id);
-		}
-		catch(Exception e)
-		{
-			System.out.println(e.toString());
-		}
-
-		JLabel otro = new JLabel(errormsg);
-		otro.setBounds(0,0,5000,50);
-		PLogin.add(otro);
-		otro.setVisible(true);
+//		String errormsg = "msg3";
+//		final String dbClassName = "com.mysql.jdbc.Driver";
+//		final String CONNECTION = "jdbc:mysql://ec2-54-201-6-28.us-west-2.compute.amazonaws.com:3306/db";
+//
+//		Connection connection = null;
+//		PreparedStatement preparedStatement = null;
+//		ResultSet resultSet = null;
+//
+//		try
+//		{
+//			Class.forName(dbClassName);
+//		}
+//		catch(Exception e)
+//		{
+//			errormsg = e.toString();
+//		}
+//
+//		try
+//		{
+//			connection = DriverManager.getConnection(CONNECTION,"fhbb","drvtry");
+//		}
+//		catch(Exception e)
+//		{
+//			errormsg = e.toString();
+//			System.out.println(e.toString());
+//		}
+//
+//		try
+//		{
+//			preparedStatement = connection.prepareStatement("SELECT id from db.FLIGHTS");
+//			resultSet = preparedStatement.executeQuery();
+//	
+//			resultSet.next();
+//			int id = resultSet.getInt("id");
+//			System.out.println("id:  " + id);
+//		}
+//		catch(Exception e)
+//		{
+//			System.out.println(e.toString());
+//		}
+//
+//		JLabel otro = new JLabel(errormsg);
+//		otro.setBounds(0,0,5000,50);
+//		PLogin.add(otro);
+//		otro.setVisible(true);
 
 		c.add(PFlightTypes);
 		c.add(PLogin);
