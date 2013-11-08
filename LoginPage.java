@@ -58,17 +58,17 @@ public class LoginPage extends JFrame
 	JScrollPane JSP3 = new JScrollPane(TDomesticFlight1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	JScrollPane JSP4 = new JScrollPane(TInternationalFlight1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
-	Icon img1 = new ImageIcon("src/img/economic.jpg");
+//	Icon img1 = new ImageIcon("src/img/economic.jpg");
 //	Icon img2 = new ImageIcon("src/img/business.jpg");
 //	Icon img3 = new ImageIcon("src/img/economic1.jpg");
 //	Icon img4 = new ImageIcon("src/img/business1.jpg");
 
-	JLabel LEconomic = new JLabel("Economic", img1, SwingConstants.LEFT);
+//	JLabel LEconomic = new JLabel("Economic", img1, SwingConstants.LEFT);
 //	JLabel LBusiness = new JLabel("Business", img2, SwingConstants.LEFT);
 //	JLabel LEconomic1 = new JLabel("Economic", img3, SwingConstants.LEFT);
 //	JLabel LBusiness1 = new JLabel("Business", img4, SwingConstants.LEFT);
 
-//	JLabel LEconomic = new JLabel("Economic");
+	JLabel LEconomic = new JLabel("Economic");
 	JLabel LBusiness = new JLabel("Business");
 	JLabel LEconomic1 = new JLabel("Economic");
 	JLabel LBusiness1 = new JLabel("Business");
