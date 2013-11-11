@@ -1,0 +1,12 @@
+<web-app version="2.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xsi:schemalocation="http:/java.sun.com/dtd/web-app_2_3.dtd">
+<servlet>
+<servlet-name>SqlServlet</servlet-name>
+<servlet-class>SqlServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>SqlServlet</servlet-name>
+<url-pattern>/fhb</url-pattern>
+</servlet-mapping>
+
+</web-app>

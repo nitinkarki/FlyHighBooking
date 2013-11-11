@@ -1,13 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.net.*;
 import java.io.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.PreparedStatement;
+//import java.sql.Connection;
+//import java.sql.DriverManager;
+//import java.sql.ResultSet;
+//import java.sql.SQLException;
+//import java.sql.Statement;
+//import java.sql.PreparedStatement;
 
 public class DomesticFlight extends JFrame
 {
@@ -222,103 +223,121 @@ class button3 implements ActionListener
 
 		iPrice = (iPrice*iAdult)+(iPrice*(iChildren/2));
 
-		int iCount=0;
 		int iSeatCount=0;
 
-		String[] sTempFrom=new String[1250];
-		String[] sTempTo=new String[1250];
-		String[] sTempClass=new String[1250];
-		String[] sTempBookingDate=new String[1250];
-		String[] sTempTime=new String[1250];
-		Integer[] iTempAdult=new Integer[1250];
-		Integer[] iTempChildren=new Integer[1250];
-		Integer[] iTempInfant=new Integer[1250];
-		Integer[] iTempPrice=new Integer[1250];
-
-		String errormsg = "msg3";
-		final String dbClassName = "com.mysql.jdbc.Driver";
-		final String CONNECTION = "jdbc:mysql://ec2-54-201-6-28.us-west-2.compute.amazonaws.com:3306/db";
-
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		ResultSet resultSet = null;
-
-		try
-		{
-			Class.forName(dbClassName);
-		}
-		catch(Exception ex)
-		{
-			errormsg = ex.toString();
-		}
-
-		try
-		{
-			connection = DriverManager.getConnection(CONNECTION,"fhbb","drvtry");
-		}
-		catch(Exception ex)
-		{
-			errormsg = ex.toString();
-			System.out.println(ex.toString());
-		}
-
-		try
-		{
-			preparedStatement = connection.prepareStatement("SELECT * from db.flights");
-			resultSet = preparedStatement.executeQuery();
+		try {
+			String queryString = "action=query&bookingdate=" + URLEncoder.encode(sBookingDate) + "&from=" + URLEncoder.encode(sFrom) + "&to=" + URLEncoder.encode(sTo);
+			System.out.println("yo");
+			System.out.println(queryString);
+			URL servletURL = new URL("http", "ec2-54-201-6-28.us-west-2.compute.amazonaws.com", 8080, "/fhb/fhb?" + queryString);
 	
-			for (i = 0; resultSet.next(); i++)
-			{
-				sTempFrom[i] = resultSet.getString("fromloc");
-				sTempTo[i] = resultSet.getString("toloc");
-				sTempClass[i] = resultSet.getString("class");
-				sTempBookingDate[i] = resultSet.getString("booking_date");
-				sTempTime[i] = resultSet.getString("time");
-				iTempAdult[i] = resultSet.getInt("adults");
-				iTempChildren[i] = resultSet.getInt("children");
-				iTempInfant[i] = resultSet.getInt("infants");
-				iTempPrice[i] = resultSet.getInt("price");
-
-				if (sTempBookingDate[i].equals(sBookingDate) && sTempTo[i].equals(sTo) && sTempFrom[i].equals(sFrom))
-					iSeatCount += iTempAdult[i] + iTempChildren[i] + iTempInfant[i];
-			}
-		}
-		catch(Exception ex)
-		{
-			System.out.println(ex.toString());
+			HttpURLConnection conn = (HttpURLConnection)servletURL.openConnection();
+			BufferedReader resp = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			iSeatCount = Integer.parseInt(resp.readLine());
+			resp.close();
+		} catch (Exception exc) {
+			System.out.println(exc);
 		}
 
+		System.out.println(iSeatCount);
+
+//		int iCount=0;
+//		int iSeatCount=0;
+//
+//		String[] sTempFrom=new String[1250];
+//		String[] sTempTo=new String[1250];
+//		String[] sTempClass=new String[1250];
+//		String[] sTempBookingDate=new String[1250];
+//		String[] sTempTime=new String[1250];
+//		Integer[] iTempAdult=new Integer[1250];
+//		Integer[] iTempChildren=new Integer[1250];
+//		Integer[] iTempInfant=new Integer[1250];
+//		Integer[] iTempPrice=new Integer[1250];
+//
+//		String errormsg = "msg3";
+//		final String dbClassName = "com.mysql.jdbc.Driver";
+//		final String CONNECTION = "jdbc:mysql://ec2-54-201-6-28.us-west-2.compute.amazonaws.com:3306/db";
+//
+//		Connection connection = null;
+//		PreparedStatement preparedStatement = null;
+//		ResultSet resultSet = null;
+//
 //		try
 //		{
-////read from data
-//			Save2 save1;
-//			ObjectInputStream OIS1 = new ObjectInputStream(new FileInputStream("save2.txt"));
-//			do
-//			{
-//				save1 = (Save2)OIS1.readObject();
-//				sTempFrom[iCount] = save1.sFrom;
-//				sTempTo[iCount] = save1.sTo;
-//				sTempClass[iCount] = save1.sClass;
-//				sTempBookingDate[iCount] = save1.sBookingDate;
-//				sTempTime[iCount] = save1.sTime;
-//				iTempAdult[iCount] = save1.iAdult;
-//				iTempChildren[iCount] = save1.iChildren;
-//				iTempInfant[iCount] = save1.iInfant;
-//				iTempPrice[iCount] = save1.iPrice;
-//
-//				iCount++;
-//				if(save1.sBookingDate.equals(sBookingDate))
-//					if(save1.sTo.equals(sTo))
-//						iSeatCount=iSeatCount + save1.iAdult + save1.iChildren + save1.iInfant;
-//			}while(save1!=null);
-//			OIS1.close();
-//
+//			Class.forName(dbClassName);
 //		}
-//		catch(Exception e1)
+//		catch(Exception ex)
 //		{
+//			errormsg = ex.toString();
 //		}
-
-		iSeatCount = iSeatCount + iAdult + iChildren + iInfant;
+//
+//		try
+//		{
+//			connection = DriverManager.getConnection(CONNECTION,"fhbb","drvtry");
+//		}
+//		catch(Exception ex)
+//		{
+//			errormsg = ex.toString();
+//			System.out.println(ex.toString());
+//		}
+//
+//		try
+//		{
+//			preparedStatement = connection.prepareStatement("SELECT * from db.flights");
+//			resultSet = preparedStatement.executeQuery();
+//	
+//			for (i = 0; resultSet.next(); i++)
+//			{
+//				sTempFrom[i] = resultSet.getString("fromloc");
+//				sTempTo[i] = resultSet.getString("toloc");
+//				sTempClass[i] = resultSet.getString("class");
+//				sTempBookingDate[i] = resultSet.getString("booking_date");
+//				sTempTime[i] = resultSet.getString("time");
+//				iTempAdult[i] = resultSet.getInt("adults");
+//				iTempChildren[i] = resultSet.getInt("children");
+//				iTempInfant[i] = resultSet.getInt("infants");
+//				iTempPrice[i] = resultSet.getInt("price");
+//
+//				if (sTempBookingDate[i].equals(sBookingDate) && sTempTo[i].equals(sTo) && sTempFrom[i].equals(sFrom))
+//					iSeatCount += iTempAdult[i] + iTempChildren[i] + iTempInfant[i];
+//			}
+//		}
+//		catch(Exception ex)
+//		{
+//			System.out.println(ex.toString());
+//		}
+//
+////		try
+////		{
+//////read from data
+////			Save2 save1;
+////			ObjectInputStream OIS1 = new ObjectInputStream(new FileInputStream("save2.txt"));
+////			do
+////			{
+////				save1 = (Save2)OIS1.readObject();
+////				sTempFrom[iCount] = save1.sFrom;
+////				sTempTo[iCount] = save1.sTo;
+////				sTempClass[iCount] = save1.sClass;
+////				sTempBookingDate[iCount] = save1.sBookingDate;
+////				sTempTime[iCount] = save1.sTime;
+////				iTempAdult[iCount] = save1.iAdult;
+////				iTempChildren[iCount] = save1.iChildren;
+////				iTempInfant[iCount] = save1.iInfant;
+////				iTempPrice[iCount] = save1.iPrice;
+////
+////				iCount++;
+////				if(save1.sBookingDate.equals(sBookingDate))
+////					if(save1.sTo.equals(sTo))
+////						iSeatCount=iSeatCount + save1.iAdult + save1.iChildren + save1.iInfant;
+////			}while(save1!=null);
+////			OIS1.close();
+////
+////		}
+////		catch(Exception e1)
+////		{
+////		}
+//
+//		iSeatCount = iSeatCount + iAdult + iChildren + iInfant;
 
 		if(iSeatCount > 10)
 		{
@@ -330,37 +349,48 @@ class button3 implements ActionListener
 			if(iChoice == JOptionPane.YES_OPTION)
 			{
 				new PrintTicket1(sFrom, sTo, sClass, iAdult, iChildren, iInfant, sBookingDate, iPrice, sTime);
-				try
-				{
-					preparedStatement = connection.prepareStatement("INSERT INTO db.flights VALUES (default, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-					preparedStatement.setString(1,sFrom);
-					preparedStatement.setString(2,sTo);
-					preparedStatement.setString(3,sClass);
-					preparedStatement.setString(4,sBookingDate);
-					preparedStatement.setString(5,sTime);
-					preparedStatement.setInt(6,iAdult);
-					preparedStatement.setInt(7,iChildren);
-					preparedStatement.setInt(8,iInfant);
-					preparedStatement.setInt(9,iPrice);
-					preparedStatement.executeUpdate();
+				try {
+					String queryString = "action=update&from=" + URLEncoder.encode(sFrom) + "&to=" + URLEncoder.encode(sTo) + "&class=" + URLEncoder.encode(sClass) +  "&bookingdate=" + URLEncoder.encode(sBookingDate) + "&time=" + URLEncoder.encode(sTime) + "&adult=" + URLEncoder.encode(iAdult.toString()) + "&children=" + URLEncoder.encode(iChildren.toString()) + "&infant=" + URLEncoder.encode(iInfant.toString()) + "&price=" + URLEncoder.encode(iPrice.toString());
+					URL servletURL = new URL("http", "ec2-54-201-6-28.us-west-2.compute.amazonaws.com", 8080, "/fhb/fhb?" + queryString);
 			
-	//				for (i = 0; resultSet.next(); i++)
-	//				{
-	//					sTempFrom[i] = resultSet.getString("fromloc");
-	//					sTempTo[i] = resultSet.getString("toloc");
-	//					sTempClass[i] = resultSet.getString("class");
-	//					sTempBookingDate[i] = resultSet.getString("booking_date");
-	//					sTempTime[i] = resultSet.getString("time");
-	//					iTempAdult[i] = resultSet.getInt("adults");
-	//					iTempChildren[i] = resultSet.getInt("children");
-	//					iTempInfant[i] = resultSet.getInt("infants");
-	//					iTempPrice[i] = resultSet.getInt("price");
-	//					System.out.println("from:  " + sTempFrom[i]);
-				}catch(Exception e1)
-				{
-					System.out.println(e1);
+					HttpURLConnection conn = (HttpURLConnection)servletURL.openConnection();
+					BufferedReader resp = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+					System.out.println(resp.readLine());
+				} catch (Exception exc) {
+					System.out.println(exc);
 				}
 			}
+//				try
+//				{
+//					preparedStatement = connection.prepareStatement("INSERT INTO db.flights VALUES (default, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+//					preparedStatement.setString(1,sFrom);
+//					preparedStatement.setString(2,sTo);
+//					preparedStatement.setString(3,sClass);
+//					preparedStatement.setString(4,sBookingDate);
+//					preparedStatement.setString(5,sTime);
+//					preparedStatement.setInt(6,iAdult);
+//					preparedStatement.setInt(7,iChildren);
+//					preparedStatement.setInt(8,iInfant);
+//					preparedStatement.setInt(9,iPrice);
+//					preparedStatement.executeUpdate();
+//			
+//	//				for (i = 0; resultSet.next(); i++)
+//	//				{
+//	//					sTempFrom[i] = resultSet.getString("fromloc");
+//	//					sTempTo[i] = resultSet.getString("toloc");
+//	//					sTempClass[i] = resultSet.getString("class");
+//	//					sTempBookingDate[i] = resultSet.getString("booking_date");
+//	//					sTempTime[i] = resultSet.getString("time");
+//	//					iTempAdult[i] = resultSet.getInt("adults");
+//	//					iTempChildren[i] = resultSet.getInt("children");
+//	//					iTempInfant[i] = resultSet.getInt("infants");
+//	//					iTempPrice[i] = resultSet.getInt("price");
+//	//					System.out.println("from:  " + sTempFrom[i]);
+//				}catch(Exception e1)
+//				{
+//					System.out.println(e1);
+//				}
+//			}
 			else
 			{
 			}
