@@ -205,7 +205,7 @@ class button3 implements ActionListener
 			{
 				while(i<20)
 				{
-					if(type1.row1[i][1].equals(sTo))
+					if(type1.row3[i][1].equals(sTo))
 					{
 						iPrice = Integer.parseInt((String)type1.row3[i][2]);
 						sTime = (String)type1.row3[i][3];
@@ -226,7 +226,7 @@ class button3 implements ActionListener
 		int iSeatCount=0;
 
 		try {
-			String queryString = "action=query&bookingdate=" + URLEncoder.encode(sBookingDate) + "&from=" + URLEncoder.encode(sFrom) + "&to=" + URLEncoder.encode(sTo);
+			String queryString = "action=query&bookingdate=" + URLEncoder.encode(sBookingDate, "utf-8") + "&from=" + URLEncoder.encode(sFrom, "utf-8") + "&to=" + URLEncoder.encode(sTo, "utf-8");
 			System.out.println("yo");
 			System.out.println(queryString);
 			URL servletURL = new URL("http", "ec2-54-201-6-28.us-west-2.compute.amazonaws.com", 8080, "/fhb/fhb?" + queryString);
@@ -350,7 +350,7 @@ class button3 implements ActionListener
 			{
 				new PrintTicket1(sFrom, sTo, sClass, iAdult, iChildren, iInfant, sBookingDate, iPrice, sTime);
 				try {
-					String queryString = "action=update&from=" + URLEncoder.encode(sFrom) + "&to=" + URLEncoder.encode(sTo) + "&class=" + URLEncoder.encode(sClass) +  "&bookingdate=" + URLEncoder.encode(sBookingDate) + "&time=" + URLEncoder.encode(sTime) + "&adult=" + URLEncoder.encode(iAdult.toString()) + "&children=" + URLEncoder.encode(iChildren.toString()) + "&infant=" + URLEncoder.encode(iInfant.toString()) + "&price=" + URLEncoder.encode(iPrice.toString());
+					String queryString = "action=update&from=" + URLEncoder.encode(sFrom, "utf-8") + "&to=" + URLEncoder.encode(sTo, "utf-8") + "&class=" + URLEncoder.encode(sClass, "utf-8") +  "&bookingdate=" + URLEncoder.encode(sBookingDate, "utf-8") + "&time=" + URLEncoder.encode(sTime, "utf-8") + "&adult=" + URLEncoder.encode(iAdult.toString(), "utf-8") + "&children=" + URLEncoder.encode(iChildren.toString(), "utf-8") + "&infant=" + URLEncoder.encode(iInfant.toString(), "utf-8") + "&price=" + URLEncoder.encode(iPrice.toString(), "utf-8");
 					URL servletURL = new URL("http", "ec2-54-201-6-28.us-west-2.compute.amazonaws.com", 8080, "/fhb/fhb?" + queryString);
 			
 					HttpURLConnection conn = (HttpURLConnection)servletURL.openConnection();
