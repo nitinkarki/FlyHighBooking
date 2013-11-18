@@ -1,8 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.*;
 import java.io.*;
 import java.net.*;
+import javax.imageio.*;
 
 public class InternationalFlight extends JFrame
 {
@@ -41,7 +43,16 @@ public class InternationalFlight extends JFrame
 		LDate = new JLabel("(DD/MM/YYYY)");
 		LDate.setForeground(Color.red);
 
-        img1=new ImageIcon("img/worldmap.jpg");
+		BufferedImage mapBI = null;
+		try
+		{
+			URL u = new URL("http", "ec2-54-201-6-28.us-west-2.compute.amazonaws.com",80,"/FlyHighBooking/img/worldmap.jpg");
+			System.out.println(u);
+			mapBI = ImageIO.read(u);
+		} catch (Exception exc) {
+			System.out.println(exc);
+		}
+		img1=new ImageIcon(mapBI);
 		LImg1 = new JLabel(img1);
 
 		BFindFlight = new JButton("Find Flight");

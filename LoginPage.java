@@ -1,12 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.PreparedStatement;
+import java.awt.image.*;
+import java.net.*;
+import javax.imageio.*;
+//import java.sql.Connection;
+//import java.sql.DriverManager;
+//import java.sql.ResultSet;
+//import java.sql.SQLException;
+//import java.sql.Statement;
+//import java.sql.PreparedStatement;
 
 import javax.swing.text.*;
 
@@ -63,13 +66,16 @@ public class LoginPage extends JFrame
 	JScrollPane JSP3 = new JScrollPane(TDomesticFlight1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	JScrollPane JSP4 = new JScrollPane(TInternationalFlight1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
-	Icon img1 = new ImageIcon("img/economic.jpg");
-	Icon img2 = new ImageIcon("img/business.jpg");
+	Icon img1 = null;
+	Icon img2 = null;
+//	Icon img1 = new ImageIcon(ecBI);
+//
+//	Icon img2 = new ImageIcon(busBI);
 //	Icon img3 = new ImageIcon("img/economic1.jpg");
 //	Icon img4 = new ImageIcon("img/business1.jpg");
 
-	JLabel LEconomic = new JLabel("Economic", img1, SwingConstants.LEFT);
-	JLabel LBusiness = new JLabel("Business", img2, SwingConstants.LEFT);
+	JLabel LEconomic = null;
+	JLabel LBusiness = null;
 //	JLabel LEconomic1 = new JLabel("Economic", img3, SwingConstants.LEFT);
 //	JLabel LBusiness1 = new JLabel("Business", img4, SwingConstants.LEFT);
 
@@ -130,6 +136,30 @@ public class LoginPage extends JFrame
 		JSP2.setVisible(false);
 		JSP3.setVisible(false);
 		JSP4.setVisible(false);
+
+		BufferedImage ecBI = null;
+		try
+		{
+			URL u = new URL("http", "ec2-54-201-6-28.us-west-2.compute.amazonaws.com",80,"/FlyHighBooking/img/economic.jpg");
+			System.out.println(u);
+			ecBI = ImageIO.read(u);
+		} catch (Exception exc) {
+			System.out.println(exc);
+		}
+		img1 = new ImageIcon(ecBI);
+		LEconomic = new JLabel("Economic", img1, SwingConstants.LEFT);
+
+		BufferedImage busBI = null;
+		try
+		{
+			URL u = new URL("http", "ec2-54-201-6-28.us-west-2.compute.amazonaws.com",80,"/FlyHighBooking/img/business.jpg");
+			System.out.println(u);
+			busBI = ImageIO.read(u);
+		} catch (Exception exc) {
+			System.out.println(exc);
+		}
+		img2 = new ImageIcon(busBI);
+		LBusiness = new JLabel("Business", img2, SwingConstants.LEFT);
 
 		LBusiness.setBounds(265, 170, 300, 125);
 		LEconomic.setBounds(0, 170, 300, 125);
