@@ -41,8 +41,8 @@ public class InternationalFlight extends JFrame
 		LDate = new JLabel("(DD/MM/YYYY)");
 		LDate.setForeground(Color.red);
 
-//		img1=new ImageIcon("src/map1.jpg");
-//		LImg1 = new JLabel(img1);
+        img1=new ImageIcon("img/worldmap.jpg");
+		LImg1 = new JLabel(img1);
 
 		BFindFlight = new JButton("Find Flight");
 
@@ -63,7 +63,7 @@ public class InternationalFlight extends JFrame
 
 		BFindFlight.setBounds(50,270,100,25);
 
-//		LImg1.setBounds(0,290,495,260);
+		LImg1.setBounds(50,310,495,216);
 
 		PPanel1.add(LBookingDetails);
 		PPanel1.add(LFrom);
@@ -76,7 +76,7 @@ public class InternationalFlight extends JFrame
 		PPanel1.add(LClass);
 		PPanel1.add(CBClass);
 		PPanel1.add(BFindFlight);
-//		PPanel1.add(LImg1);
+		PPanel1.add(LImg1);
 		PPanel1.setBackground(Color.white);
 
 		c.add(PPanel1,BorderLayout.WEST);
