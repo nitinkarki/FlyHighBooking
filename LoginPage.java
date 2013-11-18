@@ -239,7 +239,12 @@ class viewpdf implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 	        String filePath = "ho.pdf";
-	
+		URL fileUrl = null;
+		try {
+			fileUrl = new URL("http", "ec2-54-201-6-28.us-west-2.compute.amazonaws.com",80,"/FlyHighBooking/ho.pdf");
+		} catch (Exception exc) {
+			System.out.println(exc);
+		}
 	        // build a component controller
 	        SwingController controller = new SwingController();
 	        controller.setIsEmbeddedComponent(true);
@@ -261,11 +266,12 @@ class viewpdf implements ActionListener
 	
 	        // build a containing JFrame for display
 	        JFrame applicationFrame = new JFrame();
-	        applicationFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		applicationFrame.setPreferredSize(new Dimension(800,600));
+//	        applicationFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	        applicationFrame.getContentPane().add(viewerComponentPanel);
 	
 	        // Now that the GUI is all in place, we can try opening a PDF
-	        controller.openDocument(filePath);
+	        controller.openDocument(fileUrl);
 	
 	        // hard set the page view to single page which effectively give a single
 	        // page view. This should be done after openDocument as it has code that
