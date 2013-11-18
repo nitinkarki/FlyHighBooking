@@ -19,13 +19,17 @@ public class LoginPage extends JFrame
 
 	public boolean bCheck=true;
 
-	JLabel LDomesticFlight = new JLabel("<html><B>Domestic Flights</B></html>");
-	JLabel LInternationalFlight = new JLabel("<html><B>International Flights</B></html>");
+	JLabel LDomesticFlight = new JLabel("<html><b>Domestic Flights</b></html>");
+	JLabel LInternationalFlight = new JLabel("<html><b>International Flights</b></html>");
 
 	JLabel LUserName, LPassword;
 
-	JLabel LDomesticFlight1 = new JLabel("<html><B>Domestic Flight Booking</B></html>");
-	JLabel LInternationalFlight1 = new JLabel("<html><B>International Flight Booking</B></html>");
+	JLabel LDomesticFlight1 = new JLabel("<html><b>Domestic Flight Booking</b></html>");
+	JLabel LInternationalFlight1 = new JLabel("<html><b>International Flight Booking</b></html>");
+
+	JLabel LDivideBooking = new JLabel("Select booking method to purchase ticket(s).");
+	JLabel LDivideFlights = new JLabel("Select flight type to view flights in table.");
+	JLabel LTableTitle = new JLabel("<html><b>Flight Listings</b></html>");
 
 	JTextField TFUserName;
 	JPasswordField TPPassword;
@@ -58,18 +62,18 @@ public class LoginPage extends JFrame
 	JScrollPane JSP3 = new JScrollPane(TDomesticFlight1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	JScrollPane JSP4 = new JScrollPane(TInternationalFlight1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
-//	Icon img1 = new ImageIcon("src/img/economic.jpg");
-//	Icon img2 = new ImageIcon("src/img/business.jpg");
-//	Icon img3 = new ImageIcon("src/img/economic1.jpg");
-//	Icon img4 = new ImageIcon("src/img/business1.jpg");
+	Icon img1 = new ImageIcon("img/economic.jpg");
+	Icon img2 = new ImageIcon("img/business.jpg");
+//	Icon img3 = new ImageIcon("img/economic1.jpg");
+//	Icon img4 = new ImageIcon("img/business1.jpg");
 
-//	JLabel LEconomic = new JLabel("Economic", img1, SwingConstants.LEFT);
-//	JLabel LBusiness = new JLabel("Business", img2, SwingConstants.LEFT);
+	JLabel LEconomic = new JLabel("Economic", img1, SwingConstants.LEFT);
+	JLabel LBusiness = new JLabel("Business", img2, SwingConstants.LEFT);
 //	JLabel LEconomic1 = new JLabel("Economic", img3, SwingConstants.LEFT);
 //	JLabel LBusiness1 = new JLabel("Business", img4, SwingConstants.LEFT);
 
-	JLabel LEconomic = new JLabel("Economic");
-	JLabel LBusiness = new JLabel("Business");
+//	JLabel LEconomic = new JLabel("Economic");
+//	JLabel LBusiness = new JLabel("Business");
 	JLabel LEconomic1 = new JLabel("Economic");
 	JLabel LBusiness1 = new JLabel("Business");
 
@@ -91,9 +95,8 @@ public class LoginPage extends JFrame
 		PLogin.setBounds(500,0,350, 340);
 		PFlightDetails.setBounds(0,340,790,200);
 
-
-		LUserName = new JLabel("         Luser Name ");
-		LPassword = new JLabel("         Password ");
+		LUserName = new JLabel("User Name ");
+		LPassword = new JLabel("Password ");
 		TFUserName = new JTextField(10);
 		TPPassword = new JPasswordField(10);
 		BLogin = new JButton("Sign In");
@@ -104,8 +107,9 @@ public class LoginPage extends JFrame
 		TPPassword.setBounds(160, 140, 100, 21);
 		BLogin.setBounds(160, 200, 100,25);
 
-		LDomesticFlight1.setBounds(60, 60, 138, 20);
-		LInternationalFlight1.setBounds(60, 100, 153, 20);
+		LDomesticFlight1.setBounds(60, 100, 250, 15);
+		LDivideBooking.setBounds(10, 125, 350, 15);
+		LInternationalFlight1.setBounds(60, 150, 250, 15);
 
 		PLogin.add(LUserName);
 		PLogin.add(TFUserName);
@@ -124,76 +128,37 @@ public class LoginPage extends JFrame
 		JSP4.setVisible(false);
 
 		LBusiness.setBounds(265, 170, 300, 125);
-		LEconomic.setBounds(0, 170, 250, 125);
+		LEconomic.setBounds(0, 170, 300, 125);
 		LBusiness1.setBounds(280, 200, 135, 60);
 		LEconomic1.setBounds(50, 200, 147, 60);
 
+		PFlightTypes.add(LTableTitle);
 		PFlightTypes.add(LEconomic);
 		PFlightTypes.add(LBusiness);
 		PFlightTypes.add(LEconomic1);
 		PFlightTypes.add(LBusiness1);
 
 		LBusiness.setVisible(false);
-		LEconomic1.setVisible(false);
 		LBusiness1.setVisible(true);
 		LEconomic.setVisible(true);
+		LEconomic1.setVisible(true);
+	
+		LDomesticFlight.setBounds(60, 40, 200, 30);
+		LDivideFlights.setBounds(10,80,350,15);
+		LInternationalFlight.setBounds(60, 100, 220, 30);
+		LTableTitle.setBounds(350,320,250,20);
 
-
-		LDomesticFlight.setBounds(60, 60, 100, 25);
-		LInternationalFlight.setBounds(60, 100, 120, 25);
-
-
-//		String errormsg = "msg3";
-//		final String dbClassName = "com.mysql.jdbc.Driver";
-//		final String CONNECTION = "jdbc:mysql://ec2-54-201-6-28.us-west-2.compute.amazonaws.com:3306/db";
-//
-//		Connection connection = null;
-//		PreparedStatement preparedStatement = null;
-//		ResultSet resultSet = null;
-//
-//		try
-//		{
-//			Class.forName(dbClassName);
-//		}
-//		catch(Exception e)
-//		{
-//			errormsg = e.toString();
-//		}
-//
-//		try
-//		{
-//			connection = DriverManager.getConnection(CONNECTION,"fhbb","drvtry");
-//		}
-//		catch(Exception e)
-//		{
-//			errormsg = e.toString();
-//			System.out.println(e.toString());
-//		}
-//
-//		try
-//		{
-//			preparedStatement = connection.prepareStatement("SELECT id from db.FLIGHTS");
-//			resultSet = preparedStatement.executeQuery();
-//	
-//			resultSet.next();
-//			int id = resultSet.getInt("id");
-//			System.out.println("id:  " + id);
-//		}
-//		catch(Exception e)
-//		{
-//			System.out.println(e.toString());
-//		}
-//
-//		JLabel otro = new JLabel(errormsg);
-//		otro.setBounds(0,0,5000,50);
-//		PLogin.add(otro);
-//		otro.setVisible(true);
+		LDomesticFlight.setVisible(false);
+		LDivideFlights.setVisible(false);
+		LInternationalFlight.setVisible(false);
+		LTableTitle.setVisible(true);
 
 		c.add(PFlightTypes);
 		c.add(PLogin);
 		c.add(PFlightDetails);
 
 		PFlightTypes.add(LDomesticFlight);
+		PFlightTypes.add(LDivideFlights);
 		PFlightTypes.add(LInternationalFlight);
 
 		pack();
@@ -239,7 +204,12 @@ class button1 implements ActionListener
 		sCheck = type.TFUserName.getText();
 		if ((sCheck1.equals(sCheck)) && check())
 		{
+			type.LDomesticFlight.setVisible(true);
+			type.LDivideFlights.setVisible(true);
+			type.LInternationalFlight.setVisible(true);
+
 			type.PLogin.add(type.LDomesticFlight1);
+			type.PLogin.add(type.LDivideBooking);
 			type.PLogin.add(type.LInternationalFlight1);
 
 			type.PLogin.remove(type.LUserName);
