@@ -24,12 +24,13 @@ public class LoginPage extends JFrame
 
 	JLabel LUserName, LPassword;
 
-	JLabel LDomesticFlight1 = new JLabel("<html><b>Domestic Flight Booking</b></html>");
-	JLabel LInternationalFlight1 = new JLabel("<html><b>International Flight Booking</b></html>");
+	JButton LDomesticFlight1 = new JButton("<html><b>Domestic Flight Booking</b></html>");
+	JButton LInternationalFlight1 = new JButton("<html><b>International Flight Booking</b></html>");
 
-	JLabel LDivideBooking = new JLabel("Select booking method to purchase ticket(s).");
-	JLabel LDivideFlights = new JLabel("Select flight type to view flights in table.");
+	JLabel LDivideBooking = new JLabel("<html><i>Select booking method to purchase ticket(s).</i></html>");
+	JLabel LDivideFlights = new JLabel("<html><i>Select flight type to view flight listings.</i></html>");
 	JLabel LTableTitle = new JLabel("<html><b>Flight Listings</b></html>");
+    JLabel LChooseClass = new JLabel("<----- Choose a flight class");
 
 	JTextField TFUserName;
 	JPasswordField TPPassword;
@@ -107,10 +108,13 @@ public class LoginPage extends JFrame
 		TPPassword.setBounds(160, 140, 100, 21);
 		BLogin.setBounds(160, 200, 100,25);
 
-		LDomesticFlight1.setBounds(60, 100, 250, 15);
+		LDomesticFlight1.setBounds(60, 85, 235, 30);
 		LDivideBooking.setBounds(10, 125, 350, 15);
-		LInternationalFlight1.setBounds(60, 150, 250, 15);
+		LInternationalFlight1.setBounds(60, 150, 235, 30);
 
+        LChooseClass.setBounds(0,230,250,15);
+        LChooseClass.setVisible(false);
+        
 		PLogin.add(LUserName);
 		PLogin.add(TFUserName);
 		PLogin.add(LPassword);
@@ -207,10 +211,12 @@ class button1 implements ActionListener
 			type.LDomesticFlight.setVisible(true);
 			type.LDivideFlights.setVisible(true);
 			type.LInternationalFlight.setVisible(true);
+            type.LChooseClass.setVisible(true);
 
 			type.PLogin.add(type.LDomesticFlight1);
 			type.PLogin.add(type.LDivideBooking);
 			type.PLogin.add(type.LInternationalFlight1);
+            type.PLogin.add(type.LChooseClass);
 
 			type.PLogin.remove(type.LUserName);
 			type.PLogin.remove(type.TFUserName);

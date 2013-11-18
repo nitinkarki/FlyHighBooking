@@ -28,10 +28,10 @@ public class InternationalFlight extends JFrame
 		PPanel1.setPreferredSize(new Dimension(500,200));
 
 		LBookingDetails = new JLabel("<html><b><font color=\"#C71585\">Booking Details</font></b></html>");
-		LFrom = new JLabel("From          :");
-		LTo = new JLabel("To               :");
-		LBookingDate = new JLabel("Booking Date:");
-		LClass = new JLabel("Class         :");
+		LFrom = new JLabel("From");
+		LTo = new JLabel("To");
+		LBookingDate = new JLabel("Booking Date");
+		LClass = new JLabel("Class");
 
 		CBFrom = new JComboBox(sItem1);
 		CBTo = new JComboBox(sItem2);
@@ -46,7 +46,7 @@ public class InternationalFlight extends JFrame
 
 		BFindFlight = new JButton("Find Flight");
 
-		LBookingDetails.setBounds(20,3,100,20);
+		LBookingDetails.setBounds(75,3,150,20);
 
 		LFrom.setBounds(20,40,100,20);
 		CBFrom.setBounds(100,40,100,20);
@@ -84,7 +84,7 @@ public class InternationalFlight extends JFrame
 		PPanel2 = new JPanel(null);
 		PPanel2.setPreferredSize(new Dimension(320,160));
 
-		LPassengerDetails=new JLabel("<html><b><font color=\"#C71585\">PassengerDetails</font></b></html>");
+		LPassengerDetails=new JLabel("<html><b><font color=\"#C71585\">Passenger Details</font></b></html>");
 
 		LAdult = new JLabel("Adults(12+)");
 
@@ -104,7 +104,7 @@ public class InternationalFlight extends JFrame
 		//LImg2 = new JLabel(img2);
 		//LNotes = new JLabel("<html><body><p>NOTE: Bookings with International Credit Cards <p> have temporarily been suspended.This Service<p> will resume shortly and we will have a notice<p> posted on our website.We regret any <p>inconvenience caused to our passengers.</body></html>");
 
-		LPassengerDetails.setBounds(40,3,100,20);
+		LPassengerDetails.setBounds(75,3,150,20);
 
 		LAdult.setBounds(40,40,100,20);
 		CBAdult.setBounds(140,40,100,20);
