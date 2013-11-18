@@ -4,6 +4,11 @@ import java.awt.event.*;
 import java.awt.image.*;
 import java.net.*;
 import javax.imageio.*;
+
+import org.icepdf.ri.common.ComponentKeyBinding;
+import org.icepdf.ri.common.SwingController;
+import org.icepdf.ri.common.views.DocumentViewController;
+import org.icepdf.ri.common.views.DocumentViewControllerImpl;
 //import java.sql.Connection;
 //import java.sql.DriverManager;
 //import java.sql.ResultSet;
@@ -29,11 +34,12 @@ public class LoginPage extends JFrame
 
 	JButton LDomesticFlight1 = new JButton("<html><b>Domestic Flight Booking</b></html>");
 	JButton LInternationalFlight1 = new JButton("<html><b>International Flight Booking</b></html>");
+	JButton LViewPdf = new JButton("View PDF");
 
 	JLabel LDivideBooking = new JLabel("<html><i>Select booking method to purchase ticket(s).</i></html>");
 	JLabel LDivideFlights = new JLabel("<html><i>Select flight type to view flight listings.</i></html>");
 	JLabel LTableTitle = new JLabel("<html><b>Flight Listings</b></html>");
-    JLabel LChooseClass = new JLabel("<----- Choose a flight class");
+	JLabel LChooseClass = new JLabel("<----- Choose a flight class");
 
 	JTextField TFUserName;
 	JPasswordField TPPassword;
@@ -117,9 +123,10 @@ public class LoginPage extends JFrame
 		LDomesticFlight1.setBounds(60, 85, 235, 30);
 		LDivideBooking.setBounds(10, 125, 350, 15);
 		LInternationalFlight1.setBounds(60, 150, 235, 30);
+		LViewPdf.setBounds(60, 200, 235, 30);
 
-        LChooseClass.setBounds(0,230,250,15);
-        LChooseClass.setVisible(false);
+		LChooseClass.setBounds(0,230,250,15);
+		LChooseClass.setVisible(false);
         
 		PLogin.add(LUserName);
 		PLogin.add(TFUserName);
@@ -205,6 +212,7 @@ public class LoginPage extends JFrame
 
 		LDomesticFlight1.addMouseListener(new mouse3(this, true));
 		LInternationalFlight1.addMouseListener(new mouse3(this, false));
+		LViewPdf.addActionListener(new viewpdf(this));
 
 		LBusiness1.addMouseListener(new mouse2(this, true));
 		LEconomic1.addMouseListener(new mouse2(this, false));
@@ -220,13 +228,64 @@ public class LoginPage extends JFrame
 	}
 }
 
+class viewpdf implements ActionListener
+{
+	LoginPage type;
+
+	public viewpdf(LoginPage type)
+	{
+		this.type = type;
+	}
+	public void actionPerformed(ActionEvent e)
+	{
+	        String filePath = "ho.pdf";
+	
+	        // build a component controller
+	        SwingController controller = new SwingController();
+	        controller.setIsEmbeddedComponent(true);
+	
+	        // set the viewController embeddable flag.
+	        DocumentViewController viewController =
+	                controller.getDocumentViewController();
+	
+	        JPanel viewerComponentPanel = new JPanel();
+	        viewerComponentPanel.add(viewController.getViewContainer());
+	
+	        // add copy keyboard command
+	        ComponentKeyBinding.install(controller, viewerComponentPanel);
+	
+	        // add interactive mouse link annotation support via callback
+	        controller.getDocumentViewController().setAnnotationCallback(
+	                new org.icepdf.ri.common.MyAnnotationCallback(
+	                        controller.getDocumentViewController()));
+	
+	        // build a containing JFrame for display
+	        JFrame applicationFrame = new JFrame();
+	        applicationFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+	        applicationFrame.getContentPane().add(viewerComponentPanel);
+	
+	        // Now that the GUI is all in place, we can try opening a PDF
+	        controller.openDocument(filePath);
+	
+	        // hard set the page view to single page which effectively give a single
+	        // page view. This should be done after openDocument as it has code that
+	        // can change the view mode if specified by the file.
+	        controller.setPageViewMode(
+	                DocumentViewControllerImpl.ONE_PAGE_VIEW,
+	                false);
+	
+	        // show the component
+	        applicationFrame.pack();
+	        applicationFrame.setVisible(true);
+	}
+}
 
 class button1 implements ActionListener
 {
 	LoginPage type;
-	char[] cCheck, cPassword={'a','d','m','i','n','\0'};
+	char[] cCheck, cPassword={'a','d','m','i','n','\0'}, cPassword2={'u','s','e','r','\0'};
 	JFrame f;
-	String sCheck,sCheck1="admin";
+	String sCheck,sCheck1="admin",sCheck2="user";
 
 	public button1(LoginPage type)
 	{
@@ -241,12 +300,34 @@ class button1 implements ActionListener
 			type.LDomesticFlight.setVisible(true);
 			type.LDivideFlights.setVisible(true);
 			type.LInternationalFlight.setVisible(true);
-            type.LChooseClass.setVisible(true);
+			type.LChooseClass.setVisible(true);
+			type.LViewPdf.setVisible(true);
 
 			type.PLogin.add(type.LDomesticFlight1);
 			type.PLogin.add(type.LDivideBooking);
 			type.PLogin.add(type.LInternationalFlight1);
-            type.PLogin.add(type.LChooseClass);
+			type.PLogin.add(type.LChooseClass);
+			type.PLogin.add(type.LViewPdf);
+
+			type.PLogin.remove(type.LUserName);
+			type.PLogin.remove(type.TFUserName);
+			type.PLogin.remove(type.LPassword);
+			type.PLogin.remove(type.TPPassword);
+			type.PLogin.remove(type.BLogin);
+
+			type.c.repaint();
+		}
+		else if ((sCheck2.equals(sCheck)) && check2())
+		{
+			type.LDomesticFlight.setVisible(true);
+			type.LDivideFlights.setVisible(true);
+			type.LInternationalFlight.setVisible(true);
+			type.LChooseClass.setVisible(true);
+
+			type.PLogin.add(type.LDomesticFlight1);
+			type.PLogin.add(type.LDivideBooking);
+			type.PLogin.add(type.LInternationalFlight1);
+			type.PLogin.add(type.LChooseClass);
 
 			type.PLogin.remove(type.LUserName);
 			type.PLogin.remove(type.TFUserName);
@@ -268,6 +349,17 @@ class button1 implements ActionListener
 		for(int i=0;i<=4;i++)
 		{
 			if(cCheck[i]!=cPassword[i])
+				return false;
+		}
+		return true;
+	}
+	public boolean check2()
+	{
+		if (cCheck.length >= 5 || cCheck.length < 3)
+			return false;
+		for(int i=0;i<=3;i++)
+		{
+			if(cCheck[i]!=cPassword2[i])
 				return false;
 		}
 		return true;
