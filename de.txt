@@ -134,4 +134,3 @@ Oakland	San Jose	381	3:23
 Oakland	San Jose	398	4:34
 Oakland	San Francisco	386	4:09
 Oakland	San Francisco	425	22:48
-
