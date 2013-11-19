@@ -34,7 +34,7 @@ public class LoginPage extends JFrame
 
 	JButton LDomesticFlight1 = new JButton("<html><b>Domestic Flight Booking</b></html>");
 	JButton LInternationalFlight1 = new JButton("<html><b>International Flight Booking</b></html>");
-	JButton LViewPdf = new JButton("View PDF");
+	JButton LAdminPanel = new JButton("Administrator Panel");
 
 	JLabel LDivideBooking = new JLabel("<html><i>Select booking method to purchase ticket(s).</i></html>");
 	JLabel LDivideFlights = new JLabel("<html><i>Select flight type to view flight listings.</i></html>");
@@ -123,7 +123,7 @@ public class LoginPage extends JFrame
 		LDomesticFlight1.setBounds(60, 85, 235, 30);
 		LDivideBooking.setBounds(10, 125, 350, 15);
 		LInternationalFlight1.setBounds(60, 150, 235, 30);
-		LViewPdf.setBounds(60, 200, 235, 30);
+		LAdminPanel.setBounds(60, 200, 235, 30);
 
 		LChooseClass.setBounds(0,230,250,15);
 		LChooseClass.setVisible(false);
@@ -212,7 +212,7 @@ public class LoginPage extends JFrame
 
 		LDomesticFlight1.addMouseListener(new mouse3(this, true));
 		LInternationalFlight1.addMouseListener(new mouse3(this, false));
-		LViewPdf.addActionListener(new viewpdf(this));
+		LAdminPanel.addActionListener(new openadmin(this));
 
 		LBusiness1.addMouseListener(new mouse2(this, true));
 		LEconomic1.addMouseListener(new mouse2(this, false));
@@ -228,62 +228,71 @@ public class LoginPage extends JFrame
 	}
 }
 
-class viewpdf implements ActionListener
+class openadmin implements ActionListener
 {
 	LoginPage type;
 
-	public viewpdf(LoginPage type)
+	public openadmin(LoginPage type)
 	{
 		this.type = type;
 	}
 	public void actionPerformed(ActionEvent e)
 	{
-	        String filePath = "ho.pdf";
-		URL fileUrl = null;
-		try {
-			fileUrl = new URL("http", "ec2-54-201-6-28.us-west-2.compute.amazonaws.com",80,"/FlyHighBooking/ho.pdf");
-		} catch (Exception exc) {
-			System.out.println(exc);
-		}
-	        // build a component controller
-	        SwingController controller = new SwingController();
-	        controller.setIsEmbeddedComponent(true);
-	
-	        // set the viewController embeddable flag.
-	        DocumentViewController viewController =
-	                controller.getDocumentViewController();
-	
-	        JPanel viewerComponentPanel = new JPanel();
-	        viewerComponentPanel.add(viewController.getViewContainer());
-	
-	        // add copy keyboard command
-	        ComponentKeyBinding.install(controller, viewerComponentPanel);
-	
-	        // add interactive mouse link annotation support via callback
-	        controller.getDocumentViewController().setAnnotationCallback(
-	                new org.icepdf.ri.common.MyAnnotationCallback(
-	                        controller.getDocumentViewController()));
-	
-	        // build a containing JFrame for display
-	        JFrame applicationFrame = new JFrame();
-		applicationFrame.setPreferredSize(new Dimension(800,600));
-//	        applicationFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-	        applicationFrame.getContentPane().add(viewerComponentPanel);
-	
-	        // Now that the GUI is all in place, we can try opening a PDF
-	        controller.openDocument(fileUrl);
-	
-	        // hard set the page view to single page which effectively give a single
-	        // page view. This should be done after openDocument as it has code that
-	        // can change the view mode if specified by the file.
-	        controller.setPageViewMode(
-	                DocumentViewControllerImpl.ONE_PAGE_VIEW,
-	                false);
-	
-	        // show the component
-	        applicationFrame.pack();
-	        applicationFrame.setVisible(true);
+		Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+		if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE))
+			try {
+				URL url = new URL("http", "ec2-54-201-6-28.us-west-2.compute.amazonaws.com",80,"/FlyHighBooking/admin.php");
+				desktop.browse(url.toURI());
+			} catch (Exception exc) {
+				System.out.println(exc);
+			}
 	}
+//	        String filePath = "ho.pdf";
+//		URL fileUrl = null;
+//		try {
+//			fileUrl = new URL("http", "ec2-54-201-6-28.us-west-2.compute.amazonaws.com",80,"/FlyHighBooking/ho.pdf");
+//		} catch (Exception exc) {
+//			System.out.println(exc);
+//		}
+//	        // build a component controller
+//	        SwingController controller = new SwingController();
+//	        controller.setIsEmbeddedComponent(true);
+//	
+//	        // set the viewController embeddable flag.
+//	        DocumentViewController viewController =
+//	                controller.getDocumentViewController();
+//	
+//	        JPanel viewerComponentPanel = new JPanel();
+//	        viewerComponentPanel.add(viewController.getViewContainer());
+//	
+//	        // add copy keyboard command
+//	        ComponentKeyBinding.install(controller, viewerComponentPanel);
+//	
+//	        // add interactive mouse link annotation support via callback
+//	        controller.getDocumentViewController().setAnnotationCallback(
+//	                new org.icepdf.ri.common.MyAnnotationCallback(
+//	                        controller.getDocumentViewController()));
+//	
+//	        // build a containing JFrame for display
+//	        JFrame applicationFrame = new JFrame();
+//		applicationFrame.setPreferredSize(new Dimension(800,600));
+////	        applicationFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+//	        applicationFrame.getContentPane().add(viewerComponentPanel);
+//	
+//	        // Now that the GUI is all in place, we can try opening a PDF
+//	        controller.openDocument("http://ec2-54-201-6-28.us-west-2.compute.amazonaws.com/FlyHighBooking/ho.pdf");
+//	
+//	        // hard set the page view to single page which effectively give a single
+//	        // page view. This should be done after openDocument as it has code that
+//	        // can change the view mode if specified by the file.
+//	        controller.setPageViewMode(
+//	                DocumentViewControllerImpl.ONE_PAGE_VIEW,
+//	                false);
+//	
+//	        // show the component
+//	        applicationFrame.pack();
+//	        applicationFrame.setVisible(true);
+//	 }
 }
 
 class button1 implements ActionListener
@@ -307,13 +316,13 @@ class button1 implements ActionListener
 			type.LDivideFlights.setVisible(true);
 			type.LInternationalFlight.setVisible(true);
 			type.LChooseClass.setVisible(true);
-			type.LViewPdf.setVisible(true);
+			type.LAdminPanel.setVisible(true);
 
 			type.PLogin.add(type.LDomesticFlight1);
 			type.PLogin.add(type.LDivideBooking);
 			type.PLogin.add(type.LInternationalFlight1);
 			type.PLogin.add(type.LChooseClass);
-			type.PLogin.add(type.LViewPdf);
+			type.PLogin.add(type.LAdminPanel);
 
 			type.PLogin.remove(type.LUserName);
 			type.PLogin.remove(type.TFUserName);
