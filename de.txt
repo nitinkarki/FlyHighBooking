@@ -1,0 +1,137 @@
+Phoenix	San Diego	365	10:24
+Phoenix	San Diego	139	9:45
+Phoenix	Ontario	222	2:19
+Phoenix	Burbank	422	5:35
+Phoenix	Los Angeles	177	18:06
+Phoenix	Orange County	112	14:03
+Phoenix	Las Vegas	131	17:58
+Phoenix	Las Vegas	283	14:04
+Phoenix	San Jose	226	3:16
+Phoenix	San Jose	304	5:42
+Phoenix	San Francisco	262	11:09
+Phoenix	San Francisco	100	13:47
+Phoenix	Oakland	343	12:28
+San Diego	Phoenix	203	13:32
+San Diego	Phoenix	203	6:54
+San Diego	Ontario	133	18:13
+San Diego	Burbank	391	17:45
+San Diego	Burbank	203	22:42
+San Diego	Los Angeles	329	6:09
+San Diego	Orange County	378	14:03
+San Diego	Orange County	494	13:08
+San Diego	Las Vegas	122	11:52
+San Diego	Las Vegas	383	21:24
+San Diego	San Jose	169	0:05
+San Diego	San Jose	395	18:19
+San Diego	San Francisco	100	0:01
+San Diego	Oakland	411	5:46
+San Diego	Oakland	201	11:13
+Ontario	Phoenix	281	9:52
+Ontario	Phoenix	490	14:49
+Ontario	San Diego	260	6:12
+Ontario	San Diego	364	15:41
+Ontario	Burbank	365	22:53
+Ontario	Burbank	290	0:43
+Ontario	Los Angeles	263	16:03
+Ontario	Orange County	438	5:47
+Ontario	Orange County	453	18:17
+Ontario	Las Vegas	436	8:00
+Ontario	Las Vegas	164	16:58
+Ontario	San Jose	145	10:40
+Ontario	San Francisco	308	19:51
+Ontario	San Francisco	455	6:29
+Ontario	Oakland	250	1:56
+Ontario	Oakland	310	9:15
+Burbank	Phoenix	213	22:34
+Burbank	San Diego	410	10:58
+Burbank	Ontario	116	10:28
+Burbank	Ontario	213	7:00
+Burbank	Los Angeles	165	22:32
+Burbank	Orange County	452	20:36
+Burbank	Orange County	454	5:15
+Burbank	Las Vegas	133	7:11
+Burbank	Las Vegas	305	7:20
+Burbank	San Jose	419	18:54
+Burbank	San Francisco	292	7:42
+Burbank	Oakland	373	8:40
+Los Angeles	Phoenix	116	2:09
+Los Angeles	San Diego	272	16:15
+Los Angeles	San Diego	219	9:43
+Los Angeles	Ontario	273	6:22
+Los Angeles	Ontario	278	10:33
+Los Angeles	Burbank	237	20:50
+Los Angeles	Orange County	382	1:10
+Los Angeles	Las Vegas	430	8:27
+Los Angeles	San Jose	174	3:18
+Los Angeles	San Francisco	272	4:13
+Los Angeles	San Francisco	263	8:17
+Los Angeles	Oakland	417	20:13
+Los Angeles	Oakland	327	3:16
+Orange County	Phoenix	290	12:56
+Orange County	San Diego	454	3:54
+Orange County	San Diego	458	20:26
+Orange County	Ontario	327	1:22
+Orange County	Ontario	258	17:15
+Orange County	Burbank	386	11:35
+Orange County	Los Angeles	396	21:21
+Orange County	Los Angeles	411	10:24
+Orange County	Las Vegas	305	7:34
+Orange County	San Jose	449	1:25
+Orange County	San Francisco	180	18:29
+Orange County	San Francisco	266	9:23
+Orange County	Oakland	196	11:08
+Las Vegas	Phoenix	417	16:39
+Las Vegas	San Diego	410	18:18
+Las Vegas	Ontario	194	10:04
+Las Vegas	Burbank	302	9:45
+Las Vegas	Los Angeles	189	18:20
+Las Vegas	Los Angeles	239	8:31
+Las Vegas	Orange County	155	17:27
+Las Vegas	Orange County	179	7:06
+Las Vegas	San Jose	216	2:04
+Las Vegas	San Jose	374	19:01
+Las Vegas	San Francisco	468	3:24
+Las Vegas	San Francisco	420	2:39
+Las Vegas	Oakland	368	10:43
+Las Vegas	Oakland	163	20:33
+San Jose	Phoenix	452	7:06
+San Jose	San Diego	424	9:04
+San Jose	Ontario	248	16:44
+San Jose	Ontario	474	2:01
+San Jose	Burbank	485	15:11
+San Jose	Burbank	120	4:52
+San Jose	Los Angeles	348	22:24
+San Jose	Orange County	476	19:45
+San Jose	Las Vegas	165	18:12
+San Jose	San Francisco	199	18:32
+San Jose	Oakland	194	21:28
+San Jose	Oakland	498	15:40
+San Francisco	Phoenix	282	10:44
+San Francisco	San Diego	274	19:41
+San Francisco	San Diego	314	11:11
+San Francisco	Ontario	459	8:08
+San Francisco	Burbank	366	16:19
+San Francisco	Burbank	218	22:03
+San Francisco	Los Angeles	233	0:39
+San Francisco	Los Angeles	378	20:32
+San Francisco	Orange County	173	12:51
+San Francisco	Las Vegas	457	20:40
+San Francisco	San Jose	261	3:40
+San Francisco	Oakland	421	18:34
+San Francisco	Oakland	405	0:48
+Oakland	Phoenix	253	3:12
+Oakland	Phoenix	376	18:04
+Oakland	San Diego	463	2:57
+Oakland	San Diego	348	16:20
+Oakland	Ontario	454	11:45
+Oakland	Burbank	351	21:28
+Oakland	Los Angeles	158	5:08
+Oakland	Orange County	116	10:28
+Oakland	Orange County	474	22:26
+Oakland	Las Vegas	494	14:41
+Oakland	Las Vegas	282	10:30
+Oakland	San Jose	381	3:23
+Oakland	San Jose	398	4:34
+Oakland	San Francisco	386	4:09
+Oakland	San Francisco	425	22:48
+

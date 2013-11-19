@@ -187,11 +187,11 @@ class button2 implements ActionListener
 				while(i<20)
 				{
 					System.out.println(sTo);
-					System.out.println(type1.row2[i][1]);
-					if(type1.row2[i][1].equals(sTo))
+					System.out.println(type1.row2.get(i)[1]);
+					if(type1.row2.get(i)[1].equals(sTo))
 					{
-						iPrice = Integer.parseInt((String)type1.row2[i][2]);
-						sTime = (String)type1.row2[i][3];
+						iPrice = Integer.parseInt((String)type1.row2.get(i)[2]);
+						sTime = (String)type1.row2.get(i)[3];
 						break;
 					}
 					i++;
@@ -208,10 +208,10 @@ class button2 implements ActionListener
 			{
 				while(i<20)
 				{
-					if(type1.row4[i][1].equals(sTo))
+					if(type1.row4.get(i)[1].equals(sTo))
 					{
-						iPrice = Integer.parseInt((String)type1.row4[i][2]);
-						sTime = (String)type1.row4[i][3];
+						iPrice = Integer.parseInt((String)type1.row4.get(i)[2]);
+						sTime = (String)type1.row4.get(i)[3];
 						break;
 					}
 					i++;
