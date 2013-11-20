@@ -27,8 +27,8 @@ public class DomesticFlight extends JFrame
 	{
 		Container c =getContentPane();
 		c.setLayout(new BorderLayout());
-		String[] sItem1={"Phoenix"};
-		String[] sItem2 ={ "San Diego", "Los Angeles", "Las Vegas", "San Jose", "San Francisco", "Ontario", "Oakland", "Burbank", "Orange Conty"};
+		String[] sItem1={"Phoenix", "San Diego", "Los Angeles", "Las Vegas", "San Jose", "San Francisco", "Ontario", "Oakland", "Burbank", "Orange County"};
+		String[] sItem2 ={ "Phoenix", "San Diego", "Los Angeles", "Las Vegas", "San Jose", "San Francisco", "Ontario", "Oakland", "Burbank", "Orange County"};
 		String[] sItem3={"Economic","Business"};
 
 		this.type1 = type1;
@@ -183,8 +183,7 @@ class button3 implements ActionListener
 		String sBookingDate = type.TFBookingDate.getText();
 		Integer iPrice=0;
 		String sTime="";
-
-
+        
 		Integer iAdult = Integer.parseInt((String)type.CBAdult.getSelectedItem());
 		Integer iChildren = Integer.parseInt((String)type.CBChildren.getSelectedItem());
 		Integer iInfant = Integer.parseInt((String)type.CBInfant.getSelectedItem());
@@ -360,7 +359,7 @@ class button3 implements ActionListener
 			int iChoice = JOptionPane.showConfirmDialog(null,"Seats available. Do you want to Book now?");
 			if(iChoice == JOptionPane.YES_OPTION)
 			{
-				new PrintTicket1(sFrom, sTo, sClass, iAdult, iChildren, iInfant, sBookingDate, iPrice, sTime);
+                new PrintTicket1(sFrom, sTo, sClass, iAdult, iChildren, iInfant, sBookingDate, iPrice, sTime);
 				try {
 					String queryString = "action=update&from=" + URLEncoder.encode(sFrom, "utf-8") + "&to=" + URLEncoder.encode(sTo, "utf-8") + "&class=" + URLEncoder.encode(sClass, "utf-8") +  "&bookingdate=" + URLEncoder.encode(sBookingDate, "utf-8") + "&time=" + URLEncoder.encode(sTime, "utf-8") + "&adult=" + URLEncoder.encode(iAdult.toString(), "utf-8") + "&children=" + URLEncoder.encode(iChildren.toString(), "utf-8") + "&infant=" + URLEncoder.encode(iInfant.toString(), "utf-8") + "&price=" + URLEncoder.encode(iPrice.toString(), "utf-8");
 					URL servletURL = new URL("http", "ec2-54-201-6-28.us-west-2.compute.amazonaws.com", 8080, "/fhb/fhb?" + queryString);
