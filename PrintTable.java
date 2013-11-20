@@ -25,9 +25,12 @@ public class PrintTable extends JFrame
         //search through ArrayList and find matching 'sFrom' and 'sTo' flights
         for(int i = 0; i < row1.size();i++)
         {
-            //if the 'sForm' and 'sTo' match element(s), create a table displaying only those flights
-            if(row1.[i]. == sFrom && row1.[i] == sTo)
-                Table = new JTable(row1.toArray(new Object[row1.size()][]), col);
+            for(int j = 0; j < row1.size();j++)
+            {
+                //if the 'sForm' and 'sTo' match element(s), create a table displaying only those flights
+                if(row1.get(j) == sFrom && row1.get(j) == sTo)
+                    Table = new JTable(row1.toArray(new Object[row1.size()][]), col);
+            }
         }
         
         //creates the scrollpane for the table above
