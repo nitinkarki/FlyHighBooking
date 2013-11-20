@@ -1,0 +1,628 @@
+Phoenix	London	1336	6:19
+Phoenix	London	1082	2:58
+Phoenix	Rome	1253	2:26
+Phoenix	Frankfurt	1144	3:07
+Phoenix	Frankfurt	1165	19:04
+Phoenix	Tokyo	1005	19:52
+Phoenix	Manila	1269	9:48
+Phoenix	Manila	1110	16:31
+Phoenix	Madrid	1128	0:43
+Phoenix	Madrid	1116	2:49
+Phoenix	Beijing	1167	15:41
+Phoenix	Beijing	1099	10:31
+Phoenix	Shanghai	1152	5:26
+Phoenix	Paris	1319	15:12
+Phoenix	Paris	1304	21:11
+Phoenix	Barcelona	1081	8:11
+Phoenix	Hong Kong	1040	1:47
+Phoenix	Singapore	1259	1:48
+Phoenix	Cancun	1303	5:46
+Phoenix	Cancun	1003	3:58
+Phoenix	Montreal	1210	7:21
+Phoenix	Montreal	1203	18:29
+Phoenix	Istanbul	1314	11:20
+Phoenix	Munich	1393	8:53
+Phoenix	Amsterdam	1128	15:01
+Phoenix	Amsterdam	1072	12:19
+Phoenix	Dubai	1034	3:49
+Phoenix	Dubai	1388	1:48
+Phoenix	Toronto	1064	11:01
+Phoenix	Mumbai	1078	14:51
+Phoenix	Mumbai	1027	11:13
+London	Phoenix	1144	19:29
+London	Rome	1350	19:04
+London	Rome	1034	22:55
+London	Frankfurt	1217	5:20
+London	Frankfurt	1160	8:55
+London	Tokyo	1342	11:34
+London	Manila	1027	3:51
+London	Madrid	1131	7:17
+London	Beijing	1245	15:45
+London	Beijing	1154	22:58
+London	Shanghai	1015	17:38
+London	Shanghai	1307	0:55
+London	Paris	1380	4:48
+London	Paris	1257	9:00
+London	Barcelona	1124	7:02
+London	Hong Kong	1388	22:50
+London	Hong Kong	1172	18:27
+London	Singapore	1311	14:11
+London	Singapore	1096	5:28
+London	Cancun	1220	6:15
+London	Cancun	1316	7:07
+London	Montreal	1217	10:34
+London	Istanbul	1388	12:49
+London	Istanbul	1091	9:43
+London	Munich	1323	12:30
+London	Amsterdam	1213	14:32
+London	Amsterdam	1259	20:38
+London	Dubai	1166	1:51
+London	Dubai	1381	9:41
+London	Toronto	1329	22:54
+London	Toronto	1323	13:42
+London	Mumbai	1031	0:00
+Rome	Phoenix	1022	4:01
+Rome	London	1317	3:05
+Rome	London	1326	3:40
+Rome	Frankfurt	1090	2:49
+Rome	Frankfurt	1000	14:27
+Rome	Tokyo	1244	4:39
+Rome	Tokyo	1249	21:12
+Rome	Manila	1101	13:29
+Rome	Manila	1361	16:07
+Rome	Madrid	1275	14:41
+Rome	Beijing	1132	6:17
+Rome	Shanghai	1330	1:57
+Rome	Shanghai	1137	8:07
+Rome	Paris	1230	17:11
+Rome	Paris	1088	7:22
+Rome	Barcelona	1299	14:35
+Rome	Barcelona	1260	9:44
+Rome	Hong Kong	1325	11:19
+Rome	Singapore	1392	7:22
+Rome	Cancun	1140	6:39
+Rome	Montreal	1252	1:27
+Rome	Istanbul	1071	5:15
+Rome	Istanbul	1090	16:07
+Rome	Munich	1128	21:43
+Rome	Munich	1024	7:47
+Rome	Amsterdam	1059	14:52
+Rome	Dubai	1222	17:46
+Rome	Toronto	1219	10:05
+Rome	Toronto	1246	2:19
+Rome	Mumbai	1258	5:38
+Rome	Mumbai	1138	13:12
+Frankfurt	Phoenix	1072	5:45
+Frankfurt	London	1032	4:56
+Frankfurt	London	1126	22:20
+Frankfurt	Rome	1353	14:20
+Frankfurt	Tokyo	1086	9:50
+Frankfurt	Tokyo	1360	11:02
+Frankfurt	Manila	1371	4:42
+Frankfurt	Madrid	1012	21:37
+Frankfurt	Beijing	1066	5:15
+Frankfurt	Shanghai	1186	9:47
+Frankfurt	Shanghai	1036	6:12
+Frankfurt	Paris	1238	4:13
+Frankfurt	Barcelona	1263	16:14
+Frankfurt	Hong Kong	1060	8:39
+Frankfurt	Singapore	1195	7:01
+Frankfurt	Cancun	1267	22:12
+Frankfurt	Montreal	1013	1:20
+Frankfurt	Istanbul	1111	8:45
+Frankfurt	Istanbul	1057	22:42
+Frankfurt	Munich	1250	3:50
+Frankfurt	Munich	1109	7:56
+Frankfurt	Amsterdam	1238	17:45
+Frankfurt	Amsterdam	1264	9:48
+Frankfurt	Dubai	1005	13:07
+Frankfurt	Dubai	1038	0:56
+Frankfurt	Toronto	1070	16:54
+Frankfurt	Mumbai	1286	19:51
+Frankfurt	Mumbai	1011	6:35
+Tokyo	Phoenix	1337	4:45
+Tokyo	Phoenix	1391	16:14
+Tokyo	London	1046	17:13
+Tokyo	Rome	1258	5:32
+Tokyo	Rome	1238	18:53
+Tokyo	Frankfurt	1297	9:26
+Tokyo	Frankfurt	1006	22:31
+Tokyo	Manila	1051	14:45
+Tokyo	Madrid	1210	0:22
+Tokyo	Beijing	1031	6:10
+Tokyo	Beijing	1187	4:32
+Tokyo	Shanghai	1257	5:52
+Tokyo	Paris	1198	14:44
+Tokyo	Barcelona	1363	5:37
+Tokyo	Hong Kong	1079	1:56
+Tokyo	Hong Kong	1037	12:07
+Tokyo	Singapore	1394	20:20
+Tokyo	Cancun	1297	16:41
+Tokyo	Cancun	1173	2:24
+Tokyo	Montreal	1106	3:51
+Tokyo	Istanbul	1103	8:58
+Tokyo	Munich	1027	6:14
+Tokyo	Munich	1081	6:32
+Tokyo	Amsterdam	1057	18:00
+Tokyo	Dubai	1188	12:11
+Tokyo	Toronto	1181	3:00
+Tokyo	Mumbai	1344	0:54
+Tokyo	Mumbai	1090	3:57
+Manila	Phoenix	1017	19:01
+Manila	London	1151	12:29
+Manila	Rome	1372	5:56
+Manila	Frankfurt	1336	21:00
+Manila	Tokyo	1102	0:07
+Manila	Madrid	1143	10:52
+Manila	Beijing	1043	11:37
+Manila	Beijing	1236	4:33
+Manila	Shanghai	1096	8:29
+Manila	Paris	1328	13:50
+Manila	Paris	1193	20:46
+Manila	Barcelona	1045	11:29
+Manila	Barcelona	1395	4:08
+Manila	Hong Kong	1064	4:17
+Manila	Hong Kong	1167	0:53
+Manila	Singapore	1327	17:45
+Manila	Singapore	1144	19:16
+Manila	Cancun	1279	6:19
+Manila	Montreal	1176	13:23
+Manila	Istanbul	1006	0:05
+Manila	Munich	1150	1:16
+Manila	Amsterdam	1265	19:01
+Manila	Dubai	1346	9:05
+Manila	Toronto	1134	2:07
+Manila	Toronto	1206	11:37
+Manila	Mumbai	1171	2:26
+Manila	Mumbai	1272	7:48
+Madrid	Phoenix	1186	13:51
+Madrid	Phoenix	1304	8:30
+Madrid	London	1376	18:51
+Madrid	London	1182	3:07
+Madrid	Rome	1338	6:32
+Madrid	Rome	1101	20:11
+Madrid	Frankfurt	1081	3:08
+Madrid	Tokyo	1303	11:44
+Madrid	Tokyo	1361	18:02
+Madrid	Manila	1178	22:20
+Madrid	Manila	1170	6:24
+Madrid	Beijing	1125	1:45
+Madrid	Shanghai	1344	4:48
+Madrid	Paris	1370	9:30
+Madrid	Paris	1328	19:00
+Madrid	Barcelona	1329	4:48
+Madrid	Hong Kong	1206	10:17
+Madrid	Hong Kong	1249	2:40
+Madrid	Singapore	1181	2:49
+Madrid	Cancun	1235	1:38
+Madrid	Montreal	1358	1:45
+Madrid	Istanbul	1283	14:19
+Madrid	Istanbul	1307	7:49
+Madrid	Munich	1096	9:11
+Madrid	Amsterdam	1063	3:28
+Madrid	Amsterdam	1026	8:22
+Madrid	Dubai	1097	6:06
+Madrid	Toronto	1074	8:16
+Madrid	Mumbai	1323	15:11
+Beijing	Phoenix	1279	21:07
+Beijing	Phoenix	1279	7:41
+Beijing	London	1323	14:57
+Beijing	Rome	1119	12:15
+Beijing	Rome	1372	18:53
+Beijing	Frankfurt	1130	1:15
+Beijing	Tokyo	1209	12:18
+Beijing	Tokyo	1391	13:12
+Beijing	Manila	1190	12:29
+Beijing	Manila	1270	9:14
+Beijing	Madrid	1277	9:45
+Beijing	Madrid	1299	7:05
+Beijing	Shanghai	1338	21:09
+Beijing	Shanghai	1188	6:01
+Beijing	Paris	1376	7:23
+Beijing	Paris	1097	5:44
+Beijing	Barcelona	1087	22:04
+Beijing	Hong Kong	1354	3:27
+Beijing	Singapore	1095	13:41
+Beijing	Cancun	1099	22:41
+Beijing	Montreal	1397	7:29
+Beijing	Istanbul	1015	22:42
+Beijing	Istanbul	1187	15:04
+Beijing	Munich	1218	3:17
+Beijing	Amsterdam	1307	17:54
+Beijing	Amsterdam	1183	15:33
+Beijing	Dubai	1017	2:22
+Beijing	Dubai	1025	13:14
+Beijing	Toronto	1374	3:32
+Beijing	Mumbai	1227	15:19
+Beijing	Mumbai	1004	12:09
+Shanghai	Phoenix	1106	14:57
+Shanghai	London	1350	8:46
+Shanghai	Rome	1274	14:28
+Shanghai	Rome	1189	22:09
+Shanghai	Frankfurt	1181	15:29
+Shanghai	Frankfurt	1000	12:05
+Shanghai	Tokyo	1180	19:44
+Shanghai	Tokyo	1035	10:45
+Shanghai	Manila	1094	19:18
+Shanghai	Manila	1219	0:10
+Shanghai	Madrid	1088	12:36
+Shanghai	Beijing	1361	1:18
+Shanghai	Beijing	1298	17:09
+Shanghai	Paris	1039	10:46
+Shanghai	Barcelona	1145	15:34
+Shanghai	Hong Kong	1030	9:24
+Shanghai	Hong Kong	1027	4:16
+Shanghai	Singapore	1216	3:10
+Shanghai	Singapore	1295	15:44
+Shanghai	Cancun	1195	3:13
+Shanghai	Montreal	1075	7:46
+Shanghai	Montreal	1247	1:37
+Shanghai	Istanbul	1172	2:03
+Shanghai	Istanbul	1086	0:16
+Shanghai	Munich	1010	9:21
+Shanghai	Amsterdam	1037	4:41
+Shanghai	Amsterdam	1097	2:56
+Shanghai	Dubai	1367	18:10
+Shanghai	Dubai	1221	22:49
+Shanghai	Toronto	1121	21:44
+Shanghai	Toronto	1125	1:52
+Shanghai	Mumbai	1063	1:37
+Paris	Phoenix	1125	8:43
+Paris	London	1395	17:55
+Paris	London	1308	16:44
+Paris	Rome	1008	7:00
+Paris	Rome	1187	14:18
+Paris	Frankfurt	1371	22:36
+Paris	Frankfurt	1019	14:16
+Paris	Tokyo	1064	22:52
+Paris	Manila	1373	0:12
+Paris	Madrid	1212	5:00
+Paris	Madrid	1007	9:43
+Paris	Beijing	1064	12:21
+Paris	Beijing	1032	18:13
+Paris	Shanghai	1318	1:30
+Paris	Barcelona	1390	4:08
+Paris	Hong Kong	1118	7:25
+Paris	Hong Kong	1182	20:53
+Paris	Singapore	1138	9:31
+Paris	Singapore	1242	10:27
+Paris	Cancun	1269	7:53
+Paris	Montreal	1079	7:05
+Paris	Montreal	1230	21:38
+Paris	Istanbul	1264	10:40
+Paris	Istanbul	1011	11:00
+Paris	Munich	1065	2:58
+Paris	Munich	1160	4:34
+Paris	Amsterdam	1306	21:48
+Paris	Amsterdam	1262	3:46
+Paris	Dubai	1098	15:45
+Paris	Dubai	1140	12:00
+Paris	Toronto	1339	17:38
+Paris	Mumbai	1207	15:49
+Barcelona	Phoenix	1315	20:48
+Barcelona	London	1025	4:33
+Barcelona	Rome	1267	20:36
+Barcelona	Rome	1232	2:29
+Barcelona	Frankfurt	1161	12:39
+Barcelona	Frankfurt	1189	8:05
+Barcelona	Tokyo	1229	5:56
+Barcelona	Tokyo	1345	15:38
+Barcelona	Manila	1342	15:40
+Barcelona	Manila	1232	21:45
+Barcelona	Madrid	1179	20:47
+Barcelona	Beijing	1283	3:11
+Barcelona	Shanghai	1071	18:39
+Barcelona	Paris	1173	21:42
+Barcelona	Hong Kong	1058	20:01
+Barcelona	Hong Kong	1084	15:12
+Barcelona	Singapore	1236	7:33
+Barcelona	Cancun	1135	6:50
+Barcelona	Cancun	1306	21:04
+Barcelona	Montreal	1096	12:55
+Barcelona	Montreal	1233	21:55
+Barcelona	Istanbul	1181	5:45
+Barcelona	Istanbul	1020	11:26
+Barcelona	Munich	1098	16:16
+Barcelona	Amsterdam	1184	11:13
+Barcelona	Dubai	1083	21:53
+Barcelona	Dubai	1216	1:26
+Barcelona	Toronto	1043	21:27
+Barcelona	Toronto	1153	10:36
+Barcelona	Mumbai	1065	6:20
+Barcelona	Mumbai	1389	20:03
+Hong Kong	Phoenix	1369	16:09
+Hong Kong	London	1002	3:25
+Hong Kong	London	1331	12:30
+Hong Kong	Rome	1205	6:17
+Hong Kong	Rome	1073	2:11
+Hong Kong	Frankfurt	1309	3:00
+Hong Kong	Frankfurt	1381	16:46
+Hong Kong	Tokyo	1090	15:01
+Hong Kong	Manila	1075	7:20
+Hong Kong	Madrid	1189	12:12
+Hong Kong	Beijing	1382	21:35
+Hong Kong	Shanghai	1266	11:58
+Hong Kong	Paris	1209	16:06
+Hong Kong	Paris	1065	20:37
+Hong Kong	Barcelona	1054	8:03
+Hong Kong	Singapore	1019	7:12
+Hong Kong	Singapore	1277	1:01
+Hong Kong	Cancun	1100	1:46
+Hong Kong	Cancun	1135	7:16
+Hong Kong	Montreal	1159	2:45
+Hong Kong	Montreal	1289	3:11
+Hong Kong	Istanbul	1346	2:00
+Hong Kong	Munich	1379	11:58
+Hong Kong	Munich	1102	6:08
+Hong Kong	Amsterdam	1337	7:52
+Hong Kong	Amsterdam	1137	21:57
+Hong Kong	Dubai	1027	6:48
+Hong Kong	Dubai	1176	12:40
+Hong Kong	Toronto	1377	22:37
+Hong Kong	Toronto	1185	20:31
+Hong Kong	Mumbai	1077	19:07
+Hong Kong	Mumbai	1334	0:47
+Singapore	Phoenix	1205	14:16
+Singapore	London	1195	13:42
+Singapore	Rome	1399	5:37
+Singapore	Frankfurt	1178	6:11
+Singapore	Tokyo	1152	20:28
+Singapore	Tokyo	1006	6:46
+Singapore	Manila	1214	15:02
+Singapore	Manila	1388	12:35
+Singapore	Madrid	1367	2:07
+Singapore	Madrid	1388	14:03
+Singapore	Beijing	1145	6:20
+Singapore	Shanghai	1075	11:30
+Singapore	Paris	1291	16:51
+Singapore	Barcelona	1124	0:05
+Singapore	Hong Kong	1178	3:34
+Singapore	Hong Kong	1014	15:45
+Singapore	Cancun	1211	22:35
+Singapore	Montreal	1261	8:53
+Singapore	Istanbul	1313	16:46
+Singapore	Istanbul	1018	13:52
+Singapore	Munich	1194	22:45
+Singapore	Munich	1193	9:44
+Singapore	Amsterdam	1075	20:18
+Singapore	Dubai	1389	22:16
+Singapore	Dubai	1295	18:43
+Singapore	Toronto	1310	19:27
+Singapore	Toronto	1140	2:01
+Singapore	Mumbai	1271	0:02
+Singapore	Mumbai	1277	11:57
+Cancun	Phoenix	1239	8:17
+Cancun	Phoenix	1139	9:42
+Cancun	London	1286	6:33
+Cancun	Rome	1228	22:14
+Cancun	Frankfurt	1148	12:30
+Cancun	Frankfurt	1321	9:00
+Cancun	Tokyo	1169	13:14
+Cancun	Tokyo	1273	10:45
+Cancun	Manila	1314	17:27
+Cancun	Madrid	1187	18:27
+Cancun	Madrid	1110	13:33
+Cancun	Beijing	1382	0:32
+Cancun	Shanghai	1248	16:56
+Cancun	Shanghai	1224	1:31
+Cancun	Paris	1207	10:50
+Cancun	Barcelona	1391	8:01
+Cancun	Hong Kong	1075	19:01
+Cancun	Hong Kong	1233	13:01
+Cancun	Singapore	1150	7:58
+Cancun	Montreal	1003	10:42
+Cancun	Montreal	1021	9:55
+Cancun	Istanbul	1378	9:10
+Cancun	Munich	1164	17:58
+Cancun	Amsterdam	1279	22:06
+Cancun	Dubai	1051	1:15
+Cancun	Dubai	1020	10:46
+Cancun	Toronto	1241	4:36
+Cancun	Mumbai	1148	7:38
+Cancun	Mumbai	1051	0:44
+Montreal	Phoenix	1261	22:07
+Montreal	Phoenix	1080	19:10
+Montreal	London	1393	10:10
+Montreal	Rome	1332	20:15
+Montreal	Frankfurt	1169	13:16
+Montreal	Frankfurt	1375	7:11
+Montreal	Tokyo	1142	13:52
+Montreal	Manila	1092	18:21
+Montreal	Manila	1228	16:36
+Montreal	Madrid	1330	15:44
+Montreal	Madrid	1210	3:17
+Montreal	Beijing	1275	9:22
+Montreal	Shanghai	1256	2:36
+Montreal	Paris	1031	13:21
+Montreal	Barcelona	1298	8:46
+Montreal	Barcelona	1297	3:37
+Montreal	Hong Kong	1331	0:31
+Montreal	Singapore	1186	8:56
+Montreal	Cancun	1203	11:12
+Montreal	Istanbul	1017	4:04
+Montreal	Munich	1288	7:12
+Montreal	Amsterdam	1257	16:16
+Montreal	Dubai	1376	1:04
+Montreal	Dubai	1023	12:45
+Montreal	Toronto	1008	17:25
+Montreal	Toronto	1332	9:04
+Montreal	Mumbai	1352	6:26
+Istanbul	Phoenix	1059	13:51
+Istanbul	Phoenix	1204	0:33
+Istanbul	London	1119	15:58
+Istanbul	London	1256	6:09
+Istanbul	Rome	1094	0:17
+Istanbul	Frankfurt	1084	7:20
+Istanbul	Tokyo	1022	7:08
+Istanbul	Manila	1083	19:40
+Istanbul	Madrid	1229	6:20
+Istanbul	Beijing	1361	10:08
+Istanbul	Beijing	1221	1:08
+Istanbul	Shanghai	1151	19:22
+Istanbul	Shanghai	1313	4:29
+Istanbul	Paris	1389	1:43
+Istanbul	Barcelona	1279	13:26
+Istanbul	Barcelona	1098	19:35
+Istanbul	Hong Kong	1183	4:03
+Istanbul	Singapore	1006	4:29
+Istanbul	Singapore	1256	19:10
+Istanbul	Cancun	1327	20:09
+Istanbul	Cancun	1035	14:16
+Istanbul	Montreal	1349	21:39
+Istanbul	Montreal	1023	8:34
+Istanbul	Munich	1271	7:53
+Istanbul	Amsterdam	1031	5:53
+Istanbul	Dubai	1399	1:40
+Istanbul	Dubai	1384	13:12
+Istanbul	Toronto	1001	18:15
+Istanbul	Mumbai	1296	16:58
+Istanbul	Mumbai	1294	3:18
+Munich	Phoenix	1378	2:37
+Munich	Phoenix	1298	1:23
+Munich	London	1066	21:20
+Munich	London	1329	4:20
+Munich	Rome	1122	2:42
+Munich	Frankfurt	1208	13:34
+Munich	Frankfurt	1308	17:28
+Munich	Tokyo	1244	15:24
+Munich	Tokyo	1130	2:07
+Munich	Manila	1134	17:04
+Munich	Manila	1219	7:06
+Munich	Madrid	1151	18:49
+Munich	Madrid	1067	6:57
+Munich	Beijing	1043	14:16
+Munich	Shanghai	1320	18:26
+Munich	Paris	1268	18:39
+Munich	Barcelona	1341	6:41
+Munich	Hong Kong	1303	4:21
+Munich	Hong Kong	1072	15:07
+Munich	Singapore	1240	22:51
+Munich	Singapore	1164	0:04
+Munich	Cancun	1271	9:58
+Munich	Cancun	1066	19:04
+Munich	Montreal	1236	12:47
+Munich	Montreal	1144	22:27
+Munich	Istanbul	1240	21:53
+Munich	Amsterdam	1165	1:20
+Munich	Dubai	1355	8:54
+Munich	Toronto	1112	5:50
+Munich	Mumbai	1385	20:38
+Munich	Mumbai	1299	6:15
+Amsterdam	Phoenix	1267	5:17
+Amsterdam	London	1056	6:11
+Amsterdam	Rome	1047	10:14
+Amsterdam	Frankfurt	1101	22:11
+Amsterdam	Frankfurt	1355	21:24
+Amsterdam	Tokyo	1322	10:23
+Amsterdam	Manila	1071	1:53
+Amsterdam	Manila	1132	16:34
+Amsterdam	Madrid	1258	21:19
+Amsterdam	Madrid	1173	14:54
+Amsterdam	Beijing	1059	9:05
+Amsterdam	Shanghai	1366	7:53
+Amsterdam	Paris	1227	4:10
+Amsterdam	Barcelona	1251	2:29
+Amsterdam	Hong Kong	1233	19:55
+Amsterdam	Singapore	1081	4:04
+Amsterdam	Singapore	1219	6:03
+Amsterdam	Cancun	1042	9:19
+Amsterdam	Cancun	1393	21:32
+Amsterdam	Montreal	1086	13:16
+Amsterdam	Montreal	1266	9:55
+Amsterdam	Istanbul	1327	7:53
+Amsterdam	Istanbul	1257	22:31
+Amsterdam	Munich	1128	15:13
+Amsterdam	Dubai	1172	12:04
+Amsterdam	Dubai	1165	21:26
+Amsterdam	Toronto	1284	1:30
+Amsterdam	Mumbai	1316	7:55
+Dubai	Phoenix	1202	10:36
+Dubai	London	1137	20:50
+Dubai	London	1214	12:41
+Dubai	Rome	1325	9:44
+Dubai	Rome	1208	7:55
+Dubai	Frankfurt	1062	4:28
+Dubai	Frankfurt	1048	13:56
+Dubai	Tokyo	1293	6:30
+Dubai	Tokyo	1381	20:41
+Dubai	Manila	1114	2:01
+Dubai	Madrid	1079	16:44
+Dubai	Madrid	1159	12:39
+Dubai	Beijing	1007	6:40
+Dubai	Shanghai	1272	7:13
+Dubai	Paris	1096	18:14
+Dubai	Barcelona	1109	7:54
+Dubai	Barcelona	1114	4:49
+Dubai	Hong Kong	1028	5:35
+Dubai	Singapore	1394	2:31
+Dubai	Cancun	1381	2:23
+Dubai	Montreal	1291	13:15
+Dubai	Istanbul	1250	8:49
+Dubai	Istanbul	1366	19:49
+Dubai	Munich	1106	12:14
+Dubai	Amsterdam	1071	20:53
+Dubai	Amsterdam	1144	21:14
+Dubai	Toronto	1175	0:39
+Dubai	Toronto	1167	18:28
+Dubai	Mumbai	1024	6:48
+Toronto	Phoenix	1283	18:28
+Toronto	London	1290	11:33
+Toronto	Rome	1371	2:17
+Toronto	Frankfurt	1090	20:10
+Toronto	Tokyo	1257	7:28
+Toronto	Tokyo	1056	3:10
+Toronto	Manila	1362	21:19
+Toronto	Madrid	1053	17:12
+Toronto	Madrid	1312	19:55
+Toronto	Beijing	1192	2:41
+Toronto	Beijing	1389	8:31
+Toronto	Shanghai	1157	5:09
+Toronto	Shanghai	1165	14:55
+Toronto	Paris	1294	5:40
+Toronto	Barcelona	1399	0:00
+Toronto	Barcelona	1079	11:04
+Toronto	Hong Kong	1158	8:08
+Toronto	Hong Kong	1032	6:02
+Toronto	Singapore	1264	17:22
+Toronto	Singapore	1391	19:18
+Toronto	Cancun	1184	18:36
+Toronto	Cancun	1231	13:02
+Toronto	Montreal	1364	3:02
+Toronto	Montreal	1122	8:53
+Toronto	Istanbul	1281	6:53
+Toronto	Istanbul	1068	15:31
+Toronto	Munich	1095	9:24
+Toronto	Munich	1003	5:35
+Toronto	Amsterdam	1117	21:48
+Toronto	Amsterdam	1264	15:31
+Toronto	Dubai	1097	18:27
+Toronto	Dubai	1109	16:20
+Toronto	Mumbai	1079	15:52
+Toronto	Mumbai	1074	19:24
+Mumbai	Phoenix	1326	4:58
+Mumbai	London	1043	3:04
+Mumbai	Rome	1203	3:01
+Mumbai	Frankfurt	1391	22:14
+Mumbai	Frankfurt	1232	11:43
+Mumbai	Tokyo	1030	19:49
+Mumbai	Manila	1310	7:24
+Mumbai	Madrid	1256	16:27
+Mumbai	Beijing	1131	15:12
+Mumbai	Beijing	1237	5:51
+Mumbai	Shanghai	1120	10:05
+Mumbai	Shanghai	1254	13:35
+Mumbai	Paris	1297	18:11
+Mumbai	Paris	1076	5:58
+Mumbai	Barcelona	1100	14:08
+Mumbai	Hong Kong	1050	15:06
+Mumbai	Hong Kong	1313	19:24
+Mumbai	Singapore	1286	12:41
+Mumbai	Cancun	1388	9:27
+Mumbai	Montreal	1372	14:03
+Mumbai	Istanbul	1234	18:45
+Mumbai	Munich	1058	7:24
+Mumbai	Munich	1027	7:20
+Mumbai	Amsterdam	1043	13:27
+Mumbai	Dubai	1066	19:06
+Mumbai	Toronto	1327	12:36
+Mumbai	Toronto	1110	20:51
