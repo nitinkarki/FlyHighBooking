@@ -8,7 +8,7 @@ import java.net.*;
 
 public class PrintTable extends JFrame
 {
-	public PrintTable(String sFrom, String sTo, String sClass, Integer iAdult, Integer iChildren, Integer iInfant, String sBookingDate, Integer iPrice, String sTime, ArrayList<String[]> row)
+	public PrintTable(String sFrom, String sTo, String sClass, Integer iAdult, Integer iChildren, Integer iInfant, String sBookingDate, ArrayList<String[]> row)
 	{
 		Container c=getContentPane();
 		c.setLayout(new BorderLayout());
@@ -36,7 +36,7 @@ public class PrintTable extends JFrame
 		Table = new JTable(results.toArray(new Object[results.size()][]), col);
 
 		JButton book = new JButton("Book flight!");
-		book.addActionListener(new BookFlight(Table, sFrom, sTo, sClass, iAdult, iChildren, iInfant, sBookingDate, iPrice, sTime));
+		book.addActionListener(new BookFlight(Table, results, sFrom, sTo, sClass, iAdult, iChildren, iInfant, sBookingDate));
 		book.setBounds(95,530,200,20);
 		book.setVisible(true);
 		Panel.add(book);
@@ -66,25 +66,35 @@ public class PrintTable extends JFrame
 class BookFlight implements ActionListener
 {
 	JTable Table = null;
-	String sFrom, sTo, sClass, sBookingDate, sTime;
-	Integer iAdult, iChildren, iInfant, iPrice;
+	String sFrom, sTo, sClass, sBookingDate;
+	Integer iAdult, iChildren, iInfant;
+	ArrayList<String[]> results;
 
-	public BookFlight(JTable Table, String sFrom, String sTo, String sClass, Integer iAdult, Integer iChildren, Integer iInfant, String sBookingDate, Integer iPrice, String sTime)
+	public BookFlight(JTable Table, ArrayList<String[]> results, String sFrom, String sTo, String sClass, Integer iAdult, Integer iChildren, Integer iInfant, String sBookingDate)
 	{
 		this.Table =        Table;
+		this.results =      results;
 		this.sFrom =        sFrom;
 		this.sTo =          sTo;
 		this.sClass =       sClass;
 		this.sBookingDate = sBookingDate;
-		this.sTime =        sTime;
 		this.iAdult =       iAdult;
 		this.iChildren =    iChildren;
 		this.iInfant =      iInfant;
-		this.iPrice =       iPrice;
 	}
 
 	public void actionPerformed(ActionEvent e)
 	{
+		int rown = Table.getSelectedRow();
+
+		if (rown < 0)
+		{
+			JOptionPane.showMessageDialog(null, "You must choose a flight.");
+			return;
+		}
+
+		Integer iPrice = Integer.parseInt(results.get(rown)[2]);
+		String sTime = results.get(rown)[3];
 		new PrintTicket1(sFrom, sTo, sClass, iAdult, iChildren, iInfant, sBookingDate, iPrice, sTime);
 		try {
 			String queryString = "action=update&from=" + URLEncoder.encode(sFrom, "utf-8") + "&to=" + URLEncoder.encode(sTo, "utf-8") + "&class=" + URLEncoder.encode(sClass, "utf-8") +  "&bookingdate=" + URLEncoder.encode(sBookingDate, "utf-8") + "&time=" + URLEncoder.encode(sTime, "utf-8") + "&adult=" + URLEncoder.encode(iAdult.toString(), "utf-8") + "&children=" + URLEncoder.encode(iChildren.toString(), "utf-8") + "&infant=" + URLEncoder.encode(iInfant.toString(), "utf-8") + "&price=" + URLEncoder.encode(iPrice.toString(), "utf-8");
