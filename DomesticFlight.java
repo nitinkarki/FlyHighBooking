@@ -350,7 +350,11 @@ class button3 implements ActionListener
 //
 //		iSeatCount = iSeatCount + iAdult + iChildren + iInfant;
 
-		if(iSeatCount > 10)
+		if (sFrom.equals(sTo))
+		{
+			JOptionPane.showMessageDialog(null,"Departure and destination locations must be different");
+		}
+		else if(iSeatCount > 10)
 		{
 			JOptionPane.showMessageDialog(null,"Seats are full. Sorry!");
 		}
@@ -359,7 +363,7 @@ class button3 implements ActionListener
 			int iChoice = JOptionPane.showConfirmDialog(null,"Seats available. Do you want to Book now?");
 			if(iChoice == JOptionPane.YES_OPTION)
 			{
-                new PrintTicket1(sFrom, sTo, sClass, iAdult, iChildren, iInfant, sBookingDate, iPrice, sTime);
+				new PrintTicket1(sFrom, sTo, sClass, iAdult, iChildren, iInfant, sBookingDate, iPrice, sTime);
 				try {
 					String queryString = "action=update&from=" + URLEncoder.encode(sFrom, "utf-8") + "&to=" + URLEncoder.encode(sTo, "utf-8") + "&class=" + URLEncoder.encode(sClass, "utf-8") +  "&bookingdate=" + URLEncoder.encode(sBookingDate, "utf-8") + "&time=" + URLEncoder.encode(sTime, "utf-8") + "&adult=" + URLEncoder.encode(iAdult.toString(), "utf-8") + "&children=" + URLEncoder.encode(iChildren.toString(), "utf-8") + "&infant=" + URLEncoder.encode(iInfant.toString(), "utf-8") + "&price=" + URLEncoder.encode(iPrice.toString(), "utf-8");
 					URL servletURL = new URL("http", "ec2-54-201-6-28.us-west-2.compute.amazonaws.com", 8080, "/fhb/fhb?" + queryString);

@@ -10,7 +10,7 @@ def combinate(l,b):
 	for i in l:
 		for j in l:
 			if i is not j:
-				for k in range(random.randrange(1,3)):
+				for k in range(random.randrange(1,5)):
 					s = s + "%s\t%s\t%d\t%d:%s\n" % (i,j,random.randrange(b,b+400),random.randrange(0,23),"{0:02}".format(random.randrange(0,59)));
 #					s = s + "{\"%s\", \"%s\", \"%d\", \"%d:%s\"},\n" % (i,j,random.randrange(b,b+400),random.randrange(0,23),"{0:02}".format(random.randrange(0,59)));
 	return s

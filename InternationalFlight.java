@@ -22,7 +22,7 @@ public class InternationalFlight extends JFrame
 		Container c =getContentPane();
 		c.setLayout(new BorderLayout());
 		String[] sItem1={"Phoenix", "London","Rome","Frankfurt","Tokyo","Manila","Madrid","Beijing","Hong Kong","Shanghai","Paris","Barcelona","Singapore","Cancun","Montreal","Istanbul","Munich","Amsterdam","Dubai","Mumbai","Toronto"};
-		String[] sItem2={"Phoenix, London","Rome","Frankfurt","Tokyo","Manila","Madrid","Beijing","Hong Kong","Shanghai","Paris","Barcelona","Singapore","Cancun","Montreal","Istanbul","Munich","Amsterdam","Dubai","Mumbai","Toronto"};
+		String[] sItem2={"Phoenix", "London","Rome","Frankfurt","Tokyo","Manila","Madrid","Beijing","Hong Kong","Shanghai","Paris","Barcelona","Singapore","Cancun","Montreal","Istanbul","Munich","Amsterdam","Dubai","Mumbai","Toronto"};
 		String[] sItem3={"Economic","Business"};
 
 		this.type1 = type1;
@@ -342,14 +342,20 @@ class button2 implements ActionListener
 //
 //		iSeatCount = iSeatCount + iAdult + iChildren + iInfant;
 
-		if(iSeatCount > 10)
+		if (sFrom.equals(sTo))
+		{
+			JOptionPane.showMessageDialog(null,"Departure and destination locations must be different");
+		}
+		else if(iSeatCount > 10)
 		{
 			JOptionPane.showMessageDialog(null,"Seats are full. Sorry!");
 		}
 		else
 		{
-			int iChoice = JOptionPane.showConfirmDialog(null,"Seats available. Do you want to Book now?");
-			if(iChoice == JOptionPane.YES_OPTION)
+			PrintTable pt = new PrintTable(sFrom, sTo, sClass, iAdult, iChildren, iInfant, sBookingDate, iPrice, sTime, type1.row2);
+//			int iChoice = JOptionPane.showConfirmDialog(null,"Seats available. Do you want to Book now?");
+//			if(iChoice == JOptionPane.YES_OPTION)
+			if(false)
 			{
 				new PrintTicket1(sFrom, sTo, sClass, iAdult, iChildren, iInfant, sBookingDate, iPrice, sTime);
 				try {
