@@ -18,19 +18,44 @@ public class PrintTable extends JFrame
 
 		Panel.setPreferredSize(new Dimension(500,200));
 
-		final Object[] col ={ "From", "To", "Price", "Time" };
+		final Object[] col ={ "From", "To", "Price", "Time", "Seats Remaining" };
 
 		ArrayList<String[]> results = new ArrayList<String[]>();
 
 		//creates the table
 		JTable Table = null;
 
+
 		//search through ArrayList and find matching 'sFrom' and 'sTo' flights
 		for(int i = 0; i < row.size();i++)
 		{
 			//if the 'sForm' and 'sTo' match element(s), create a table displaying only those flights
 			if(row.get(i)[0].equals(sFrom) && row.get(i)[1].equals(sTo))
-				results.add(row.get(i));
+			{
+				int iSeatCount = 0;
+				try {
+					String queryString = "action=query&bookingdate=" + URLEncoder.encode(sBookingDate, "utf-8") + "&from=" + URLEncoder.encode(sFrom, "utf-8") + "&to=" + URLEncoder.encode(sTo, "utf-8") + "&time=" + URLEncoder.encode(row.get(i)[3], "utf-8");
+					URL servletURL = new URL("http", "ec2-54-201-6-28.us-west-2.compute.amazonaws.com", 8080, "/fhb/fhb?" + queryString);
+			
+					HttpURLConnection conn = (HttpURLConnection)servletURL.openConnection();
+					BufferedReader resp = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+					iSeatCount = Integer.parseInt(resp.readLine());
+					System.out.println(iSeatCount);
+					resp.close();
+				} catch (Exception exc) {
+					System.out.println(exc);
+				}
+				if (iSeatCount + iAdult + iInfant + iChildren <= 20)
+				{
+					String[] r = new String[5];
+					r[0] = row.get(i)[0];
+					r[1] = row.get(i)[1];
+					r[2] = row.get(i)[2];
+					r[3] = row.get(i)[3];
+					r[4] = new Integer(20 - iSeatCount).toString();
+					results.add(r);
+				}
+			}
 		}
 
 		Table = new JTable(results.toArray(new Object[results.size()][]), col);
@@ -59,7 +84,6 @@ public class PrintTable extends JFrame
 		//pack();
 		setSize(795,580);
 		setVisible(true);
-
 	}
 }
 
@@ -102,7 +126,6 @@ class BookFlight implements ActionListener
 	
 			HttpURLConnection conn = (HttpURLConnection)servletURL.openConnection();
 			BufferedReader resp = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-			System.out.println(resp.readLine());
 		} catch (Exception exc) {
 			System.out.println(exc);
 		}

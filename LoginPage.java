@@ -7,13 +7,6 @@ import javax.imageio.*;
 import java.util.*;
 import java.io.*;
 
-//import java.sql.Connection;
-//import java.sql.DriverManager;
-//import java.sql.ResultSet;
-//import java.sql.SQLException;
-//import java.sql.Statement;
-//import java.sql.PreparedStatement;
-
 import javax.swing.text.*;
 
 public class LoginPage extends JFrame
@@ -49,19 +42,15 @@ public class LoginPage extends JFrame
 	final Object[] col3 = { "From", "To", "Price", "Time" };
 
 	//domestic economy
-//	final Object[][] row1 = { { "Phoenix", "San Diego", "220", "16:30" }, { "Phoenix", "Ontario ", "250", "19:00" }, { "Phoenix", "Burbank", "280", "08:30" }, { "Phoenix", "Los Angeles", "260", "09:50" }, { "Phoenix", "Orange County", "245", "11:00" }, { "Phoenix", "Las Vegas", "170", "05:30" }, { "Phoenix", "San Jose", "180", "05:30" }, { "Phoenix", "San Francisco", "260", "12:00" }, { "Phoenix", "Oakland", "320", "19:00" } };
 	final ArrayList<String[]> row1 = new ArrayList<String[]>();
 
 	//domestic business
-//	final Object[][] row3 = { { "Phoenix", "San Diego", "420", "16:30" }, { "Phoenix", "Ontario ", "450", "19:00" }, { "Phoenix", "Burbank", "480", "08:30" }, { "Phoenix", "Los Angeles", "460", "09:50" }, { "Phoenix", "Orange County", "445", "11:00" }, { "Phoenix", "Las Vegas", "370", "05:30" }, { "Phoenix", "San Jose", "380", "05:30" }, { "Phoenix", "San Francisco", "460", "12:00" }, { "Phoenix", "Oakland", "520", "19:00" } };
 	final ArrayList<String[]> row3 = new ArrayList<String[]>();
 	
 	//international economy
-//	final Object[][] row2 = { { "Phoenix", "London", "1500", "06:20" }, { "Phoenix", "Rome", "2200", "20:45" }, { "Phoenix", "Frankfurt", "1350", "10:25" }, { "Phoenix", "Tokyo", "2300", "16:45" }, { "Phoenix", "Manila", "2100", "06:30" }, { "Phoenix", "Madrid", "1550", "08:15" }, { "Phoenix", "Beijing", "2400", "06:50" }, { "Phoenix", "Shanghai", "2545", "12:00" }, { "Phoenix", "Paris", "1300", "10:45" }, { "Phoenix", "Barcelona", "1200", "14:35" }, { "Phoenix", "Hong Kong", "1500", "22:00" }, { "Phoenix", "Singapore", "1780", "21:15" }, { "Phoenix", "Cancun", "750", "08:50" }, { "Phoenix", "Montreal", "1720", "18:45" }, { "Phoenix", "Istanbul", "1390", "20:00"}, { "Phoenix", "Munich", "900", "12:00"}, { "Phoenix", "Amsterdam", "1240", "10:15" }, { "Phoenix", "Dubai", "1290", "21:10" }, { "Phoenix", "Toronto", "780", "12:00"}, { "Phoenix", "Mumbai", "2300", "17:00" } };
 	final ArrayList<String[]> row2 = new ArrayList<String[]>();
 			
 	//international business
-//	final Object[][] row4 = { { "Phoenix", "London", "2500", "06:20" }, { "Phoenix", "Rome", "3200", "20:45" }, { "Phoenix", "Frankfurt", "2350", "10:25" }, { "Phoenix", "Tokyo", "3300", "16:45" }, { "Phoenix", "Manila", "3100", "06:30" }, { "Phoenix", "Madrid", "2550", "08:15" }, { "Phoenix", "Beijing", "3400", "06:50" }, { "Phoenix", "Shanghai", "3545", "12:00" }, { "Phoenix", "Paris", "2300", "10:45" }, { "Phoenix", "Barcelona", "2200", "14:35" }, { "Phoenix", "Hong Kong", "2500", "22:00" }, { "Phoenix", "Singapore", "2780", "21:15" }, { "Phoenix", "Cancun", "1750", "08:50" }, { "Phoenix", "Montreal", "2720", "18:45" }, { "Phoenix", "Istanbul", "2390", "20:00"}, { "Phoenix", "Munich", "1900", "12:00"}, { "Phoenix", "Amsterdam", "2240", "10:15" }, { "Phoenix", "Dubai", "2290", "21:10" }, { "Phoenix", "Toronto", "1780", "12:00"}, { "Phoenix", "Mumbai", "3300", "17:00" } };
 	final ArrayList<String[]> row4 = new ArrayList<String[]>();
 
 	JTable TDomesticFlight = null;
@@ -76,19 +65,9 @@ public class LoginPage extends JFrame
 
 	Icon img1 = null;
 	Icon img2 = null;
-//	Icon img1 = new ImageIcon(ecBI);
-//
-//	Icon img2 = new ImageIcon(busBI);
-//	Icon img3 = new ImageIcon("img/economic1.jpg");
-//	Icon img4 = new ImageIcon("img/business1.jpg");
 
 	JLabel LEconomic = null;
 	JLabel LBusiness = null;
-//	JLabel LEconomic1 = new JLabel("Economic", img3, SwingConstants.LEFT);
-//	JLabel LBusiness1 = new JLabel("Business", img4, SwingConstants.LEFT);
-
-//	JLabel LEconomic = new JLabel("Economic");
-//	JLabel LBusiness = new JLabel("Business");
 	JLabel LEconomic1 = new JLabel("Economic");
 	JLabel LBusiness1 = new JLabel("Business");
 
@@ -106,12 +85,6 @@ public class LoginPage extends JFrame
 			{
 				row1.add(resp.readLine().split("\t"));
 			}
-			for (String[] ss : row1)
-			{
-				for (String s : ss)
-					System.out.print(s);
-				System.out.println();
-			}
 			resp.close();
 		} catch (Exception exc) {
 			System.out.println(exc);
@@ -125,12 +98,6 @@ public class LoginPage extends JFrame
 			while (resp.ready())
 			{
 				row2.add(resp.readLine().split("\t"));
-			}
-			for (String[] ss : row2)
-			{
-				for (String s : ss)
-					System.out.print(s);
-				System.out.println();
 			}
 			resp.close();
 		} catch (Exception exc) {
@@ -146,12 +113,6 @@ public class LoginPage extends JFrame
 			{
 				row3.add(resp.readLine().split("\t"));
 			}
-			for (String[] ss : row3)
-			{
-				for (String s : ss)
-					System.out.print(s);
-				System.out.println();
-			}
 			resp.close();
 		} catch (Exception exc) {
 			System.out.println(exc);
@@ -165,12 +126,6 @@ public class LoginPage extends JFrame
 			while (resp.ready())
 			{
 				row4.add(resp.readLine().split("\t"));
-			}
-			for (String[] ss : row4)
-			{
-				for (String s : ss)
-					System.out.print(s);
-				System.out.println();
 			}
 			resp.close();
 		} catch (Exception exc) {
@@ -340,52 +295,6 @@ class openadmin implements ActionListener
 				System.out.println(exc);
 			}
 	}
-//	        String filePath = "ho.pdf";
-//		URL fileUrl = null;
-//		try {
-//			fileUrl = new URL("http", "ec2-54-201-6-28.us-west-2.compute.amazonaws.com",80,"/FlyHighBooking/ho.pdf");
-//		} catch (Exception exc) {
-//			System.out.println(exc);
-//		}
-//	        // build a component controller
-//	        SwingController controller = new SwingController();
-//	        controller.setIsEmbeddedComponent(true);
-//	
-//	        // set the viewController embeddable flag.
-//	        DocumentViewController viewController =
-//	                controller.getDocumentViewController();
-//	
-//	        JPanel viewerComponentPanel = new JPanel();
-//	        viewerComponentPanel.add(viewController.getViewContainer());
-//	
-//	        // add copy keyboard command
-//	        ComponentKeyBinding.install(controller, viewerComponentPanel);
-//	
-//	        // add interactive mouse link annotation support via callback
-//	        controller.getDocumentViewController().setAnnotationCallback(
-//	                new org.icepdf.ri.common.MyAnnotationCallback(
-//	                        controller.getDocumentViewController()));
-//	
-//	        // build a containing JFrame for display
-//	        JFrame applicationFrame = new JFrame();
-//		applicationFrame.setPreferredSize(new Dimension(800,600));
-////	        applicationFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-//	        applicationFrame.getContentPane().add(viewerComponentPanel);
-//	
-//	        // Now that the GUI is all in place, we can try opening a PDF
-//	        controller.openDocument("http://ec2-54-201-6-28.us-west-2.compute.amazonaws.com/FlyHighBooking/ho.pdf");
-//	
-//	        // hard set the page view to single page which effectively give a single
-//	        // page view. This should be done after openDocument as it has code that
-//	        // can change the view mode if specified by the file.
-//	        controller.setPageViewMode(
-//	                DocumentViewControllerImpl.ONE_PAGE_VIEW,
-//	                false);
-//	
-//	        // show the component
-//	        applicationFrame.pack();
-//	        applicationFrame.setVisible(true);
-//	 }
 }
 
 class button1 implements ActionListener
