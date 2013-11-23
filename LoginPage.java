@@ -260,6 +260,7 @@ public class LoginPage extends JFrame
 
 		LDomesticFlight1.addMouseListener(new mouse3(this, true));
 		LInternationalFlight1.addMouseListener(new mouse3(this, false));
+		System.out.println("whatwait");
 		LAdminPanel.addActionListener(new openadmin(this));
 
 		LBusiness1.addMouseListener(new mouse2(this, true));
@@ -286,6 +287,7 @@ class openadmin implements ActionListener
 	}
 	public void actionPerformed(ActionEvent e)
 	{
+		System.out.println("waitwhat");
 		Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
 		if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE))
 			try {
@@ -294,6 +296,10 @@ class openadmin implements ActionListener
 			} catch (Exception exc) {
 				System.out.println(exc);
 			}
+		else
+		{
+			System.out.println("Unable to open browser");
+		}
 	}
 }
 
